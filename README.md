@@ -9,6 +9,8 @@
 - 안재민(https://github.com/mini-1018)
 
 # 프로젝트 소개
+- 스타트업 정보 확인 및 모의 투자 서비스 사이트 제작
+- 프로젝트 기간: 2024. 08. 13(화) ~ 2024. 09. 03(수)
 
 # 기술 스택
 - FrontEnd: JavaScript, React, scss
