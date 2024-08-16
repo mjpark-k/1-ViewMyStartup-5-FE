@@ -1,9 +1,10 @@
 import { BrowserRouter, Router } from "react-router-dom";
+import Nav from "./component/Nav";
 
 function App() {
   return (
-    <Router>
-    </Router>
+    <BrowserRouter>
+    </BrowserRouter>
   )
 }
 
