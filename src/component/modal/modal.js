@@ -34,8 +34,8 @@ export default Modal;
 //<Modal isOpen={isModalOpen} closeModal={closeModal}>
 // <>
 // <div id="modal-title">
-//  <p>기업에 투자하기</p>
-//  <div>투자 기업 정보</div>
+//  <p>기업에 투자하기</p> // <- 여기에 내용 작성해서 CSS 설정하세요
+//  <div>투자 기업 정보</div> //  <- 여기에 내용 작성해서 CSS 설정하세요
 // </div>
 // </>
 //</Modal>
