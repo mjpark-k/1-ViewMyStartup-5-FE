@@ -79,3 +79,9 @@
   width: 24px;
   height: 24px;
 }
+
+#btn-container {
+  display: flex;
+  margin-top: 24px;
+  justify-content: space-around;
+}
