@@ -12,9 +12,6 @@
   border-radius: 16px;
   padding: 24px;
   position: relative;
-  display: flex;
-  width: 500px;
-  height: 500px;
 }
 
 #delete-img {
@@ -24,8 +21,4 @@
   right: 24px;
   top: 24px;
   cursor: pointer;
-}
-
-#modal-title {
-  color: white;
 }
