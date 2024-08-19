@@ -12,9 +12,6 @@
   border-radius: 16px;
   padding: 24px;
   position: relative;
-  display: flex;
-  width: 500px;
-  height: 500px;
 }
 
 #delete-img {
