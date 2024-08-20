@@ -1,9 +1,9 @@
-import './ActionButton.css';
+import "./ActionButton.css";
 
 export function ActionButton({ className, text, onClick, option }) {
   return (
     <button className={className} onClick={onClick}>
-      {option === 'initialization' ? (
+      {option === "initialization" ? (
         <div className="initialization-box">
           <div className={option} />
           {text}

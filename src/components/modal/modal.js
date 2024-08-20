@@ -2,14 +2,14 @@ import React, { children } from "react";
 import "./modal.css";
 import deleteImg from "../../images/delete-img.svg";
 
-const Modal = ({ isOpen, closeModal, children }) => {
+const Modal = ({ className, isOpen, closeModal, children }) => {
   if (!isOpen) {
     return null; // 모달이 열려있지 않으면 아무것도 렌더링하지 않음
   }
 
   return (
     <div id="modal-container">
-      <div id="modal-content">
+      <div className={className}>
         <div id="sss">
           <img id="delete-img" onClick={closeModal} src={deleteImg}></img>
         </div>
