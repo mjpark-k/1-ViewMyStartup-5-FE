@@ -1,0 +1,9 @@
+#CompoersionViewer {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+}
+#CompoersionViewer-title {
+  font-size: 20px;
+  font-weight: 700;
+}
