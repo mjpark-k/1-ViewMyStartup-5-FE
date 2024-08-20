@@ -1,0 +1,21 @@
+#Investment-container {
+  background-color: rgba(19, 19, 19, 1);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#Investment-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+#Investment-title {
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  grid-column: 2;
+}
+#Investment-none {
+  color: rgba(116, 116, 116, 1);
+  justify-content: center;
+}

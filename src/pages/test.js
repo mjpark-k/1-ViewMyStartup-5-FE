@@ -9,7 +9,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export function Test() {
-  const [isModalOpen, setIsModalOpen] = useState(true); // false 해줘야함 나중에 버튼으로 true 해야함
+  const [isModalOpen, setIsModalOpen] = useState(false); // false 해줘야함 나중에 버튼으로 true 해야함
   const [showPass, setShowPass] = useState(false);
   const [showPass2, setShowPass2] = useState(false);
   const [name, setName] = useState("");
