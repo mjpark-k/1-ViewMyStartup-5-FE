@@ -12,6 +12,7 @@ button {
   width: 131px;
   height: 40px;
 }
+
 /* 나의 기업 투자하기 */
 .my-company-invest-button {
   width: 183px;
@@ -20,8 +21,8 @@ button {
 
 /* 다른 기업 비교하기 */
 .company-comparison-button {
-  width: 167px;
-  height: 40px;
+  width: 183px;
+  height: 48px;
 }
 
 /* 기업 추가하기 */
@@ -60,7 +61,7 @@ button {
 .initialization {
   width: 24px;
   height: 24px;
-  background-image: url('../images/initialization.png');
+  background-image: url("../images/initialization.png");
   background-size: contain;
 }
 
