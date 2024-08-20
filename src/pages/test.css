@@ -1,4 +1,4 @@
-#modal-content {
+.modal-content {
   width: 496px;
   height: 858px;
 }
@@ -84,4 +84,22 @@
   display: flex;
   margin-top: 24px;
   justify-content: space-around;
+}
+
+.complete-modal {
+  background-color: rgba(33, 33, 33, 1);
+  width: 496px;
+  height: 186px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#modal-chk-title {
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px;
+  font-weight: 400;
 }

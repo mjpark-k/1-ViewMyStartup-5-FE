@@ -6,9 +6,10 @@ import passOpenImg from "../images/pass-open.svg";
 import passCloseImg from "../images/pass-close.svg";
 import { ActionButton } from "../components/ActionButton.js";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Test() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+export function Test() {
+  const [isModalOpen, setIsModalOpen] = useState(true); // false 해줘야함 나중에 버튼으로 true 해야함
   const [showPass, setShowPass] = useState(false);
   const [showPass2, setShowPass2] = useState(false);
   const [name, setName] = useState("");
@@ -16,6 +17,10 @@ function Test() {
   const [coment, setComent] = useState("");
   const [pass, setPass] = useState("");
   const [pass2, setPass2] = useState("");
+  const [isComplete, setIsComplete] = useState(false); // false 해줘야함 나중에 버튼으로 true 해야함
+  const [companyData, setCompanyData] = useState("");
+
+  const navigate = useNavigate();
 
   const togglePass = () => {
     setShowPass((prevState) => !prevState);
@@ -23,38 +28,65 @@ function Test() {
   const togglePass2 = () => {
     setShowPass2((prevState) => !prevState);
   };
+  // useEffect(() => {
+  //   openModal("0a4788aa-b114-41e7-93b2-6e2e90367134"); // 이런식으로 아이디 가지고 올거임
+  // }, []);
 
-  /**버튼 클릭해서 활성화 시켜줘야함. */
-  const openModal = () => {
+  //
+  const isNotCompleteHandler = () => {
+    setIsComplete(false);
+  };
+
+  const completeHandler = () => {
+    setIsComplete(false);
+    navigate("/investment");
+  };
+
+  /**버튼 클릭해서 활성화 시켜줘야함. */ // 이걸로 모달 시작 온클릭에 추가해주면 끝(데이터 가지고 오는건 아직 미완)
+  const openModal = async (findId) => {
+    const result = await axios.get(
+      `https://startup-38qa.onrender.com/startups/${findId}`
+    );
+    setCompanyData(result.data);
     setIsModalOpen(true);
   };
+
   const sendAction = async () => {
     if (pass !== pass2) {
       console.log("error");
+      return; // 비밀번호가 일치하지 않으면 함수 종료
     }
 
     const data = {
       name: name,
-      Investamount: amount,
-      coment: coment,
+      InvestAmount: parseInt(amount),
+      comment: coment,
       password: pass,
     };
+
     try {
-      const getstartup = await axios.get(
-        `https://startup-38qa.onrender.com/startups`
+      const response = await axios.post(
+        `https://startup-38qa.onrender.com/startups/${companyData.id}/users`,
+        data
       );
 
-      console.log(getstartup);
+      setIsModalOpen(false);
+      setIsComplete(true);
     } catch (error) {
-      console.status(500).json().then(error);
+      console.error("An error occurred:", error); // 오류를 출력합니다.
     }
   };
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
   return (
     <div>
-      <Modal isOpen={isModalOpen} closeModal={closeModal}>
+      <Modal
+        className={"modal-content"}
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+      >
         <>
           <div id="modal-title-container">
             <div>
@@ -64,8 +96,8 @@ function Test() {
                 <div id="company-info-text">
                   <img id="company-img" src={companyImg}></img>
 
-                  <p>코드잇</p>
-                  <p id="company-catagory">에듀테크</p>
+                  <p>{companyData.name}</p>
+                  <p id="company-catagory">{companyData.category}</p>
                 </div>
                 <from id="modal-from">
                   <div>
@@ -159,6 +191,18 @@ function Test() {
             </div>
           </div>
         </>
+      </Modal>
+      <Modal
+        className={"complete-modal"}
+        isOpen={isComplete}
+        closeModal={isNotCompleteHandler}
+      >
+        <p id="modal-chk-title">투자가 완료되었어요!</p>
+        <ActionButton
+          className={"modal-button"}
+          text={"확인"}
+          onClick={completeHandler} // 이런식
+        />
       </Modal>
     </div>
   );
