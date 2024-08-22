@@ -1,0 +1,19 @@
+.delete-modal-form {
+  width: 448px;
+  height: 221px;
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  align-items: center;
+}
+
+.form-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  width: 448px;
+  height: 32px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
