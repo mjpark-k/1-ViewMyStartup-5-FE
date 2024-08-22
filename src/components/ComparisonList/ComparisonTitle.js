@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import toggle from "../../images/ic_toggle.svg";
-import styles from "./InvestTitle.module.css";
+import styles from "./ComparisonTitle.module.css";
 
-function InvestTitle({
+function ComparisonTitle({
   selectedOption,
   setSelectedOption,
   sortOrder,
@@ -23,11 +23,11 @@ function InvestTitle({
   }, []);
 
   const handleChange = (option) => {
-    if (option === "View My Startup 투자 금액 높은순") {
-      setOrderBy("simInvest");
+    if (option === "나의 기업 선택 횟수 높은순") {
+      setOrderBy("count");
       setSortOrder("desc");
-    } else if (option === "View My Startup 투자 금액 낮은순") {
-      setOrderBy("simInvest");
+    } else if (option === "나의 기업 선택 횟수 낮은순") {
+      setOrderBy("count");
       setSortOrder("asc");
     } else if (option === "실제 누적 투자 금액 높은순") {
       setOrderBy("actualInvest");
@@ -51,7 +51,7 @@ function InvestTitle({
 
   return (
     <div className={styles.flexBox}>
-      <h1 className={styles.title}>투자 현황</h1>
+      <h1 className={styles.title}>비교 현황</h1>
       <div className={styles.dropdown}>
         <p className={styles.toggle} onClick={handleButtonClick}>
           {selectedOption}
@@ -59,19 +59,11 @@ function InvestTitle({
         </p>
         {isOpen && (
           <ul className={styles.menu}>
-            <li
-              onClick={() =>
-                handleOptionClick("View My Startup 투자 금액 높은순")
-              }
-            >
-              View My Startup 투자 금액 높은순
+            <li onClick={() => handleOptionClick("나의 기업 선택 횟수 높은순")}>
+              나의 기업 선택 횟수 높은순
             </li>
-            <li
-              onClick={() =>
-                handleOptionClick("View My Startup 투자 금액 낮은순")
-              }
-            >
-              View My Startup 투자 금액 낮은순
+            <li onClick={() => handleOptionClick("나의 기업 선택 횟수 낮은순")}>
+              나의 기업 선택 횟수 낮은순
             </li>
             <li onClick={() => handleOptionClick("실제 누적 투자 금액 높은순")}>
               실제 누적 투자 금액 높은순
@@ -86,4 +78,4 @@ function InvestTitle({
   );
 }
 
-export default InvestTitle;
+export default ComparisonTitle;

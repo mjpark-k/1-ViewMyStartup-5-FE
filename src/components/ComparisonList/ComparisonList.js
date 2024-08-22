@@ -1,7 +1,7 @@
 import groupImage from "../../images/Mask group.svg";
-import styles from "./InvestList.module.css";
+import styles from "./ComparisonList.module.css";
 
-function InvestList({ startupData }) {
+function ComparisonList({ startupData }) {
   return (
     <div className={styles.inner}>
       <ul className={styles.th}>
@@ -9,8 +9,8 @@ function InvestList({ startupData }) {
         <li>기업 명</li>
         <li>기업 소개</li>
         <li>카테고리</li>
-        <li>View My Startup 투자 금액</li>
-        <li>실제 누적 투자 금액</li>
+        <li>나의 기업 선택 횟수</li>
+        <li>비교 기업 선택 횟수</li>
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
@@ -21,7 +21,7 @@ function InvestList({ startupData }) {
           </li>
           <li>{startup.description}</li>
           <li>{startup.category}</li>
-          <li>{startup.simInvest}억</li>
+          <li>{startup.count}회</li>
           <li>{startup.actualInvest}억</li>
         </ul>
       ))}
@@ -29,4 +29,4 @@ function InvestList({ startupData }) {
   );
 }
 
-export default InvestList;
+export default ComparisonList;

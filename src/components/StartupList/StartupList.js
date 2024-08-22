@@ -1,7 +1,7 @@
 import groupImage from "../../images/Mask group.svg";
-import styles from "./InvestList.module.css";
+import styles from "./StartupList.module.css";
 
-function InvestList({ startupData }) {
+function StartupList({ startupData }) {
   return (
     <div className={styles.inner}>
       <ul className={styles.th}>
@@ -9,8 +9,9 @@ function InvestList({ startupData }) {
         <li>기업 명</li>
         <li>기업 소개</li>
         <li>카테고리</li>
-        <li>View My Startup 투자 금액</li>
-        <li>실제 누적 투자 금액</li>
+        <li>누적 투자 금액</li>
+        <li>매출액</li>
+        <li>고용 인원</li>
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
@@ -21,12 +22,13 @@ function InvestList({ startupData }) {
           </li>
           <li>{startup.description}</li>
           <li>{startup.category}</li>
-          <li>{startup.simInvest}억</li>
-          <li>{startup.actualInvest}억</li>
+          <li>{startup.actualInvest}</li>
+          <li>{startup.revenue}</li>
+          <li>{startup.employees}</li>
         </ul>
       ))}
     </div>
   );
 }
 
-export default InvestList;
+export default StartupList;
