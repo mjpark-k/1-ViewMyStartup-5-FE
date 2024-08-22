@@ -9,3 +9,9 @@
   font-size: 20px;
   font-weight: 700;
 }
+#no-data {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: rgba(116, 116, 116, 1);
+}
