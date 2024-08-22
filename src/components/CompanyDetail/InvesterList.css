@@ -1,0 +1,123 @@
+.investment-detail-header {
+  width: 1200px;
+  height: 40px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.investment-detail-header-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.simInvest {
+  width: 1200px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 16px 0px;
+  margin-top: 24px;
+  border-top: 1px solid #2e2e2e;
+}
+
+.simInvest-header-row {
+  width: 1200px;
+  height: 39px;
+  background-color: #2e2e2e;
+  display: flex;
+  border-radius: 4px;
+}
+
+.invester-name,
+.invester-rank,
+.investment-amount {
+  width: 84px;
+  height: 39px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.investment-comment {
+  width: 884px;
+  height: 39px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank {
+  width: 64px;
+  height: 39px;
+}
+
+.invester-list-container {
+  margin-top: 16px;
+  padding-bottom: 40px;
+}
+
+.invester-list {
+  width: 1200px;
+  height: 64px;
+  display: flex;
+  background-color: #212121;
+  position: relative;
+}
+
+.invester-name-value,
+.invester-rank-value,
+.investment-amount-value {
+  width: 84px;
+  height: 64px;
+  color: #d8d8d8;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.investment-comment-value {
+  width: 884px;
+  height: 64px;
+  color: #d8d8d8;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kebab {
+  width: 64px;
+  height: 64px;
+  background-image: url('../../images/kebab.svg');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.invester-list-container > :nth-child(1),
+.invester-list-container > :nth-child(2),
+.invester-list-container > :nth-child(3),
+.invester-list-container > :nth-child(4) {
+  border-bottom: 1px solid #4b4b4b;
+}
+
+.invester-list-container > :nth-child(1) {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.invester-list-container > :nth-child(5) {
+  border-radius: 0px 0px 4px 4px;
+}
