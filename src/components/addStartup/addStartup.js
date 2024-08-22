@@ -4,7 +4,7 @@ import "./addStartup.css";
 import companyImg from "../../images/logo-img.svg";
 import passOpenImg from "../../images/pass-open.svg";
 import passCloseImg from "../../images/pass-close.svg";
-import { ActionButton } from "../ActionButton.js";
+import { ActionButton } from "../Buttons/ActionButton.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
