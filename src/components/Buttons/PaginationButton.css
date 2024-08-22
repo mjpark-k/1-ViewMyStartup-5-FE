@@ -1,0 +1,75 @@
+.page-before {
+  background-image: url('../../images/page-before-button.png');
+  width: 48px;
+  height: 48px;
+  background-size: 6.55px 11.15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+}
+
+.page-next {
+  background-image: url('../../images/page-next-button.png');
+  width: 48px;
+  height: 48px;
+  background-size: 6.55px 11.15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+}
+
+.page-num-box {
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-num-box > :first-child {
+  margin-right: 4px;
+}
+
+.page-num-box > :last-child {
+  margin-left: 4px;
+}
+
+.page-num {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+  color: #747474;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.page-num.selected {
+  background-color: #eb5230;
+  color: #ffffff;
+}
+
+.page-num.small {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-num.selected.small {
+  background-color: #eb5230;
+  color: #ffffff;
+}
+
+.page-before.small {
+  width: 32px;
+  height: 32px;
+}
+
+.page-next.small {
+  width: 32px;
+  height: 32px;
+}
