@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
-import PaginationButton from '../../components/Buttons/PaginationButton.js';
-import './CompanyDetailPage.css';
-import InvesterList from '../../components/CompanyDetail/InvesterList.js';
-import CompanyDetail from '../../components/CompanyDetail/CompanyDetail.js';
-import { deleteInvester, getCompany, getInvester } from '../../api.js';
-import Modal from '../../components/modal/modal.js';
-import DeleteModalForm from '../../components/CompanyDetail/Forms/DeleteModalForm.js';
-import DeleteFailForm from '../../components/CompanyDetail/Forms/DeleteFailForm.js';
+import { useEffect, useState } from "react";
+import PaginationButton from "../../components/Buttons/PaginationButton.js";
+import "./CompanyDetailPage.css";
+import InvesterList from "../../components/CompanyDetail/InvesterList.js";
+import CompanyDetail from "../../components/CompanyDetail/CompanyDetail.js";
+import { deleteInvester, getCompany, getInvester } from "../../api.js";
+import Modal from "../../components/modal/modal.js";
+import DeleteModalForm from "../../components/CompanyDetail/Forms/DeleteModalForm.js";
+import DeleteFailForm from "../../components/CompanyDetail/Forms/DeleteFailForm.js";
+import AddStartup from "../../components/addStartup/addStartup.js";
 
 export default function CompanyDetailPage() {
   const [detail, setDetail] = useState([]);
@@ -19,7 +20,7 @@ export default function CompanyDetailPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFail, setIsFail] = useState(false);
 
-  const [password, setPassword] = useState(''); //삭제모달 비밀번호 인증
+  const [password, setPassword] = useState(""); //삭제모달 비밀번호 인증
   const [investerId, setInvesterId] = useState(null); //투자자 id 상태관리
 
   const company = async () => {
@@ -120,7 +121,7 @@ export default function CompanyDetailPage() {
         }
         isOpen={isModalOpen}
         closeModal={closeModalClick}
-        className={'modal-content'}
+        className={"modal-content"}
       />
     </div>
   );
