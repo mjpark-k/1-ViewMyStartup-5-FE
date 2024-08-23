@@ -1,15 +1,23 @@
-import { ActionButton } from '../../components/Buttons/ActionButton.js';
-import './CompanyDetail.css';
+import { ActionButton } from "../../components/Buttons/ActionButton.js";
+import "./CompanyDetail.css";
+import Addstartup from "../addStartup/addStartup";
+import { useState } from "react";
 
 export default function CompanyDetail({ companyData }) {
   const company = companyData;
+  const [addClick, setaddClick] = useState(false);
+
+  const openHandler = () => {
+    setaddClick(!addClick);
+  };
 
   return (
     <>
+      <Addstartup company={company} addClick={addClick} />
       <div className="company-header">
         <img
           className="company-logo"
-          src={'../../../public/images/samsung.png'}
+          src={"../../../public/images/samsung.png"}
           alt="logo"
         />
         <div className="company-info">
@@ -42,13 +50,13 @@ export default function CompanyDetail({ companyData }) {
           View My Startup에서 받은 투자
         </div>
         <ActionButton
-          className={'company-invest-button'}
-          text={'기업투자하기'}
-          option={'none'}
+          className={"company-invest-button"}
+          text={"기업투자하기"}
+          onClick={openHandler}
         />
       </div>
       <div className="simInvest">
-        {company.simInvest === 0 ? '' : `총 ${company.simInvest}억 원`}
+        {company.simInvest === 0 ? "" : `총 ${company.simInvest}억 원`}
       </div>
     </>
   );
