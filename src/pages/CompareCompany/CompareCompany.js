@@ -5,6 +5,7 @@ import OtherCompany from "../../components/OtherCompany/OtherCompany";
 import "./CompareCompany.css";
 import ComparisonViewer from "../../components/ComparisonViewer/ComparisonViewer";
 import CompanyRank from "../../components/CompanyRank/CompanyRank";
+import AddStartup from "../../components/addStartup/addStartup";
 
 function CompareCompany() {
   const [selectComplete, setSelectComplete] = useState("");
@@ -12,7 +13,8 @@ function CompareCompany() {
   const [resultPage, setResultPage] = useState(false);
   const isDisabled = otherSelectedCompanies.length === 0;
   const [NameData, setNameData] = useState([]);
-  const [MyNameData, setMyNameData] = useState("");
+  const [mySelectedCompany, setMySelectedCompany] = useState("");
+  const [addClick, setaddClick] = useState(false);
 
   const handleClick = () => {
     if (!isDisabled) {
@@ -26,12 +28,11 @@ function CompareCompany() {
 
       setSelectComplete(false);
       setResultPage(true);
-      // NameData.push(MyNameData);
-      //Namelist 이동시켜줘야함
-      //CompanyRank
-      //CompanyViewer
-      //리스트 이동 시켜주고, 페이지에서 스테이트 만들어서 공통으로 사용
     }
+  };
+
+  const addhandleClick = () => {
+    setaddClick(!addClick);
   };
 
   return (
@@ -40,26 +41,42 @@ function CompareCompany() {
         onSelectComplete={setSelectComplete}
         otherSelectedCompanies={otherSelectedCompanies}
         setOtherSelectedCompanies={setOtherSelectedCompanies}
-        MyNameData={MyNameData}
-        setMyNameData={setMyNameData}
+        mySelectedCompany={mySelectedCompany}
+        setMySelectedCompany={setMySelectedCompany}
       />
+
       {selectComplete && (
-        <OtherCompany
-          otherSelectedCompanies={otherSelectedCompanies}
-          setOtherSelectedCompanies={setOtherSelectedCompanies}
-        />
+        <>
+          <OtherCompany
+            otherSelectedCompanies={otherSelectedCompanies}
+            setOtherSelectedCompanies={setOtherSelectedCompanies}
+          />
+          <ActionButton
+            className={`company-comparison-button ${
+              isDisabled ? "disabled" : ""
+            }`}
+            text={"기업 비교하기"}
+            onClick={handleClick}
+          />
+        </>
       )}
       {resultPage && (
         <>
-          <ComparisonViewer keyword={NameData} MyNameData={MyNameData} />
-          <CompanyRank />
+          <AddStartup addClick={addClick} company={mySelectedCompany} />
+          <ComparisonViewer
+            keyword={NameData}
+            MyNameData={mySelectedCompany[0].name}
+          />
+          <CompanyRank keyword={mySelectedCompany[0].name} />
+          <ActionButton
+            className={`company-comparison-button ${
+              isDisabled ? "disabled" : ""
+            }`}
+            text={"투자하기"}
+            onClick={addhandleClick}
+          />
         </>
       )}
-      <ActionButton
-        className={`company-comparison-button ${isDisabled ? "disabled" : ""}`}
-        text={"기업 비교하기"}
-        onClick={handleClick}
-      />
     </div>
   );
 }

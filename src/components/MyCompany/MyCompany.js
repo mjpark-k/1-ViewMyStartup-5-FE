@@ -14,8 +14,8 @@ function MyCompany({
   onSelectComplete,
   otherSelectedCompanies,
   setOtherSelectedCompanies,
-  MyNameData,
-  setMyNameData,
+  mySelectedCompany,
+  setMySelectedCompany,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -24,7 +24,7 @@ function MyCompany({
   const [recentlySelectedCompanies, setRecentlySelectedCompanies] = useState(
     []
   );
-  const [mySelectedCompany, setMySelectedCompany] = useState("");
+  // const [mySelectedCompany, setMySelectedCompany] = useState("");
 
   useEffect(() => {
     const getCompanyData = async () => {
@@ -76,7 +76,7 @@ function MyCompany({
   };
 
   const selectCompany = async (company) => {
-    setMyNameData(company);
+    // setMyNameData(company);
     const getSelectedCompany = async () => {
       const selectedCompany = await axios.get(
         "https://startup-38qa.onrender.com/startups",
