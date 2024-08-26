@@ -1,0 +1,37 @@
+.chip-item-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 비교 대상 기업 칩 css */
+.chip-inside {
+  display: flex;
+  justify-content: center;
+}
+
+.chip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chip-logo {
+  width: 80px;
+}
+
+.chip-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.chip-name {
+  font-weight: 500;
+}
+
+.chip-category {
+  font-size: 14px;
+  color: #747474;
+}
