@@ -18,7 +18,7 @@ function ComparisonViewer() {
         {
           params: {
             keyword: startupName,
-            includeRanking : "true"
+            includeRanking: "true",
             limit: 5, // 나중에 리스트 길이 만큼 정해주면 끝
             sortBy: orderBy,
             sortOrder: sortOrder,

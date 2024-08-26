@@ -1,8 +1,14 @@
 import "./CompanyItem.css";
 import imgTest from "../../images/img-test.svg";
-import { ActionButton } from "../ActionButton";
+import { ActionButton } from "../Buttons/ActionButton";
 
-function CompanyItem({ company, onSelect, isSelected, onDelete, selectCancel  }) {
+function CompanyItem({
+  company,
+  onSelect,
+  isSelected,
+  onDelete,
+  selectCancel,
+}) {
   const handleSelect = () => {
     if (!isSelected) {
       onSelect(company.name);

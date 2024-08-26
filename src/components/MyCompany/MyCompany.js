@@ -5,12 +5,18 @@ import "./MyCompany.css";
 import btnPlus from "../../images/btn-plus.svg";
 import searchDelete from "../../images/search-delete.svg";
 import searchButton from "../../images/search-button.svg";
-import { ActionButton } from "../ActionButton";
+import { ActionButton } from "../Buttons/ActionButton";
 import Modal from "../modal/modal";
 import CompanyItem from "../ComapanyItem/CompanyItem";
 import ChipContent from "../ChipContent/ChipContent";
 
-function MyCompany({ onSelectComplete, otherSelectedCompanies, setOtherSelectedCompanies }) {
+function MyCompany({
+  onSelectComplete,
+  otherSelectedCompanies,
+  setOtherSelectedCompanies,
+  MyNameData,
+  setMyNameData,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [companies, setCompanies] = useState([]);
@@ -41,7 +47,7 @@ function MyCompany({ onSelectComplete, otherSelectedCompanies, setOtherSelectedC
     getCompanyData();
   }, []);
   // 테스트
-  console.log(companies);
+  // console.log(companies);
 
   // input 값이 변경될 때마다 필터링 작업 수행(철자 하나가 빠지는 오류 해결)
   useEffect(() => {
@@ -70,6 +76,7 @@ function MyCompany({ onSelectComplete, otherSelectedCompanies, setOtherSelectedC
   };
 
   const selectCompany = async (company) => {
+    setMyNameData(company);
     const getSelectedCompany = async () => {
       const selectedCompany = await axios.get(
         "https://startup-38qa.onrender.com/startups",
@@ -108,13 +115,13 @@ function MyCompany({ onSelectComplete, otherSelectedCompanies, setOtherSelectedC
   };
 
   // 확인 용도 (선택한 나의 기업)
-  console.log(mySelectedCompany);
-  console.log(otherSelectedCompanies);
+  // console.log(mySelectedCompany);
+  // console.log(otherSelectedCompanies);
 
   return (
     <>
       <Modal
-        className={"add-company-modal"}
+        className={"modal-content"}
         isOpen={isModalOpen}
         closeModal={closeModal}
       >
