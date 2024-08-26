@@ -58,6 +58,17 @@ button {
   font-weight: 500;
 }
 
+/* 선택 해제 */
+.select-complete-button.cancel {
+  background-color: #212121;
+  width: 104px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #747474;
+  color: #747474;
+  font-weight: 500;
+}
+
 /* 선택완료 */
 .select-complete-button {
   background-color: #212121;

@@ -7,6 +7,7 @@ export default function PaginationButton({
   selectedButtonIndex,
   setSelectedButtonIndex,
   size,
+  id,
 }) {
   const [buttonCount, setButtonCount] = useState(0);
   const [pageNum, setPageNum] = useState(0);
@@ -21,7 +22,7 @@ export default function PaginationButton({
   };
 
   const initializePagination = async () => {
-    const length = await getInvesterLength();
+    const length = await getInvesterLength({id});
     const totalPages = Math.ceil(length / 5);
     setButtonCount(totalPages);
 
