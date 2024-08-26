@@ -15,3 +15,11 @@
   text-align: center;
   margin: 104px auto;
 }
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .invester-list-container > :nth-child(5) > .invester-list-dropdown {
+    position: absolute;
+    top: -65px;
+    right: 20px;
+  }
+}
