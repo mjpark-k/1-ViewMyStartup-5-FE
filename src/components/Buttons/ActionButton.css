@@ -1,0 +1,151 @@
+button {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #eb5230;
+  border-radius: 50px;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 기업 투자하기 */
+.company-invest-button {
+  width: 131px;
+  height: 40px;
+}
+/* 나의 기업 투자하기 */
+.my-company-invest-button {
+  width: 183px;
+  height: 48px;
+}
+
+/* 다른 기업 비교하기 */
+.company-comparison-button {
+  width: 167px;
+  height: 40px;
+}
+
+/* 다른 기업 비교하기 - 비활성화*/
+.company-comparison-button.disabled {
+  width: 183px;
+  height: 48px;
+  background-color: #2e2e2e;
+  color: #747474;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/*기업 추가하기*/
+.add-company-button {
+  width: 135px;
+  height: 40px;
+}
+
+/*기업 추가하기 - 비활성화*/
+.add-company-inactive-button {
+  width: 135px;
+  height: 40px;
+  background-color: #2e2e2e;
+  color: #747474;
+}
+
+/*선택하기*/
+.select-button {
+  background-color: #212121;
+  width: 104px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #eb5230;
+  color: #eb5230;
+  font-weight: 500;
+}
+
+/* 선택 해제 */
+.select-complete-button.cancel {
+  background-color: #212121;
+  width: 104px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #747474;
+  color: #747474;
+  font-weight: 500;
+}
+
+/* 선택완료 */
+.select-complete-button {
+  background-color: #212121;
+  width: 104px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #d8d8d8;
+  color: #d8d8d8;
+  font-weight: 500;
+  padding: 11px 12px;
+}
+
+/* 선택 해제 */
+.select-cancel-button {
+  background-color: #212121;
+  width: 104px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #747474;
+  color: #747474;
+  font-weight: 500;
+}
+
+/* 기업 투자 모달 - 투자하기*/
+.invest-button {
+  width: 183px;
+  height: 48px;
+}
+
+/* 기업 투자 모달 - 취소*/
+.invest-cancel-button {
+  border: 1px solid #eb5230;
+  background-color: #212121;
+  font-size: 18px;
+  color: #eb5230;
+  width: 194px;
+  height: 48px;
+}
+
+/* 모달 - 확인,삭제 */
+.modal-button {
+  width: 194px;
+  height: 48px;
+}
+
+/* 전체 초기화 */
+.initialization-button {
+  width: 149px;
+  padding: 8px 24px;
+}
+
+.initialization {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../images/initialization.png');
+  background-size: contain;
+}
+
+.initialization-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.complete {
+  width: 15px;
+  height: 9px;
+  background-image: url('/src/images/complete.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.complete-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*------------*/

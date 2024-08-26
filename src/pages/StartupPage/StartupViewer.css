@@ -1,0 +1,15 @@
+#CompoersionViewer {
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  background-color: rgba(33, 33, 33, 1);
+  flex-direction: column;
+}
+#CompoersionViewer-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+body {
+  background-color: rgba(33, 33, 33, 1);
+}

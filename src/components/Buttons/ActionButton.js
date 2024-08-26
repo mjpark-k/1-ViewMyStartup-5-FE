@@ -3,8 +3,8 @@ import './ActionButton.css';
 export function ActionButton({ className, text, onClick, option }) {
   return (
     <button className={className} onClick={onClick}>
-      {option === 'initialization' ? (
-        <div className="initialization-box">
+      {option === 'initialization' || 'complete' ? (
+        <div className={`${option}-box`}>
           <div className={option} />
           {text}
         </div>

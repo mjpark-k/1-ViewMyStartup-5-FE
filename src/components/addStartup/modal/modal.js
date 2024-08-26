@@ -1,6 +1,6 @@
 import React, { children } from "react";
 import "./modal.css";
-import deleteImg from "../../images/delete-img.svg";
+import deleteImg from "../../../images/delete-img.svg";
 
 const Modal = ({ className, isOpen, closeModal, children }) => {
   if (!isOpen) {

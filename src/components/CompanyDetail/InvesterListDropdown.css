@@ -1,0 +1,32 @@
+.invester-list-dropdown {
+  position: absolute;
+  top: 52px;
+  right: 20px;
+  z-index: 99;
+  width: 144px;
+  height: 80px;
+}
+
+.invester-list-edit {
+  width: 144px;
+  height: 40px;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #747474;
+  background-color: #131313;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d8d8d8;
+}
+
+.invester-list-delete {
+  width: 144px;
+  height: 40px;
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 1px solid #747474;
+  border-right: 1px solid #747474;
+  border-left: 1px solid #747474;
+  background-color: #131313;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d8d8d8;
+}
