@@ -56,9 +56,11 @@ export function AddStartup({ addClick, company }) {
 
     try {
       const response = await axios.post(
-        `https://startup-38qa.onrender.com/startups/${company.id}/users`,
+        `https://startup-38qa.onrender.com/startups/${company[0].id}/users`,
         data
       );
+      console.log(response.data);
+      console.log(company[0].id);
 
       setIsModalOpen(false);
       setIsComplete(true);
@@ -73,7 +75,7 @@ export function AddStartup({ addClick, company }) {
   return (
     <div>
       <Modal
-        className={"modal-content"}
+        className={"modal-content-investment"}
         isOpen={isModalOpen}
         closeModal={closeModal}
       >
@@ -86,10 +88,10 @@ export function AddStartup({ addClick, company }) {
                 <div id="company-info-text">
                   <img id="company-img" src={companyImg}></img>
 
-                  <p>{company.name}</p>
-                  <p id="company-catagory">{company.category}</p>
+                  <p>{company[0].name}</p>
+                  <p id="company-catagory">{company[0].category}</p>
                 </div>
-                <from id="modal-from">
+                <form id="modal-from">
                   <div>
                     <p id="from-name">투자자 이름</p>
                     <input
@@ -176,7 +178,7 @@ export function AddStartup({ addClick, company }) {
                       onClick={sendAction} // 이런식
                     />
                   </div>
-                </from>
+                </form>
               </div>
             </div>
           </div>

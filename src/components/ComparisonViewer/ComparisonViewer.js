@@ -3,28 +3,30 @@ import ComparisonInvestList from "./InvestList/ComparisonInvestList.js";
 import ComparisonInvestTitle from "./InvestList/ComparisonInvestTitle.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-function ComparisonViewer() {
+function ComparisonViewer({ keyword, MyNameData }) {
   const [ComparisonData, setComparisonData] = useState([]);
   const [ComparisonOption, setComparisonOption] =
     useState("누적 투자금액 낮은순");
   const [ComparisonorderBy, setComparisonOrderBy] = useState("");
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
-  // const keywrods = ["엘리스", "코드잇"];
 
+  useEffect(() => {
+    keyword.push(MyNameData);
+  });
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
         "https://startup-38qa.onrender.com/startups",
         {
           params: {
-            // keyword: keywrods,
-            limit: 5, // 나중에 리스트 길이만큼 정해주면 끝
+            keyword: keyword,
+            limit: 6, // 나중에 리스트 길이만큼 정해주면 끝
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
           },
         }
       );
-      // console.log(response.data.data);
+
       setComparisonData(response.data.data);
     };
     fetchData();
@@ -37,6 +39,8 @@ function ComparisonViewer() {
   //   };
   //   fetchData();
   // }, [oderBy, sortOder]);
+
+  // console.log(keyword);
 
   return (
     <>

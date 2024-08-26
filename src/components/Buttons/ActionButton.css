@@ -125,7 +125,7 @@ button {
 .initialization {
   width: 24px;
   height: 24px;
-  background-image: url('../../images/initialization.png');
+  background-image: url("../../images/initialization.svg");
   background-size: contain;
 }
 
@@ -138,7 +138,7 @@ button {
 .complete {
   width: 15px;
   height: 9px;
-  background-image: url('/src/images/complete.png');
+  background-image: url("/src/images/complete.png");
   background-size: contain;
   background-repeat: no-repeat;
 }

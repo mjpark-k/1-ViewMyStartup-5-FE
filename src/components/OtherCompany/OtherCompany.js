@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import "./OtherCompany.css";
-import { ActionButton } from "../ActionButton";
+import { ActionButton } from "../Buttons/ActionButton";
 import searchDelete from "../../images/search-delete.svg";
 import searchButton from "../../images/search-button.svg";
 import Modal from "../modal/modal";
@@ -91,9 +91,9 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
   };
 
   // otherSelectedCompanies 이걸 이용해서 뒤에 칩도 가져오고
-  console.log(otherSelectedCompanies);
-  console.log(otherSelectedCompanies.length);
-  console.log(filteredCompanies);
+  // console.log(otherSelectedCompanies);
+  // console.log(otherSelectedCompanies.length);
+  // console.log(filteredCompanies);
 
   // CompanyItem isSelected 관리
   const isCompanySelected = (companyId) => {
@@ -115,7 +115,11 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
 
   return (
     <>
-      <Modal className={""} isOpen={isModalOpen} closeModal={closeModal}>
+      <Modal
+        className={"modal-content"}
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+      >
         <div className="modal-box">
           <p className="modal-title">비교할 기업 선택하기</p>
           <div className="search-container">
