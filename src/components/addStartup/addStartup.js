@@ -1,16 +1,16 @@
 import Modal from "./modal/modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./addStartup.css";
 import companyImg from "../../images/logo-img.svg";
 import passOpenImg from "../../images/pass-open.svg";
 import passCloseImg from "../../images/pass-close.svg";
-import { ActionButton } from "../ActionButton.js";
+import { ActionButton } from "../Buttons/ActionButton.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export function AddStartup() {
+export function AddStartup({ addClick, company }) {
   // isModalOpen 을 밖으로 빼서 props로 받아와야함, isComplete 이것도?
-  const [isModalOpen, setIsModalOpen] = useState(false); // false 해줘야함 나중에 버튼으로 true 해야함
+  const [isModalOpen, setIsModalOpen] = useState(true); // false 해줘야함 나중에 버튼으로 true 해야함
   const [showPass, setShowPass] = useState(false);
   const [showPass2, setShowPass2] = useState(false);
   const [name, setName] = useState("");
@@ -19,21 +19,17 @@ export function AddStartup() {
   const [pass, setPass] = useState("");
   const [pass2, setPass2] = useState("");
   const [isComplete, setIsComplete] = useState(false); // false 해줘야함 나중에 버튼으로 true 해야함
-  const [companyData, setCompanyData] = useState("");
 
   const navigate = useNavigate();
-
+  useEffect(() => {
+    setIsModalOpen(!isModalOpen);
+  }, [addClick]);
   const togglePass = () => {
     setShowPass((prevState) => !prevState);
   };
   const togglePass2 = () => {
     setShowPass2((prevState) => !prevState);
   };
-  // useEffect(() => {
-  //   openModal("0a4788aa-b114-41e7-93b2-6e2e90367134"); // 이런식으로 아이디 가지고 올거임
-  // }, []);
-
-  //
   const isNotCompleteHandler = () => {
     setIsComplete(false);
   };
@@ -44,13 +40,6 @@ export function AddStartup() {
   };
 
   /**버튼 클릭해서 활성화 시켜줘야함. */ // 이걸로 모달 시작 온클릭에 추가해주면 끝(데이터 가지고 오는건 아직 미완)
-  const openModal = async (findId) => {
-    const result = await axios.get(
-      `https://startup-38qa.onrender.com/startups/${findId}`
-    );
-    setCompanyData(result.data);
-    setIsModalOpen(true);
-  };
 
   const sendAction = async () => {
     if (pass !== pass2) {
@@ -67,7 +56,7 @@ export function AddStartup() {
 
     try {
       const response = await axios.post(
-        `https://startup-38qa.onrender.com/startups/${companyData.id}/users`,
+        `https://startup-38qa.onrender.com/startups/${company.id}/users`,
         data
       );
 
@@ -97,8 +86,8 @@ export function AddStartup() {
                 <div id="company-info-text">
                   <img id="company-img" src={companyImg}></img>
 
-                  <p>{companyData.name}</p>
-                  <p id="company-catagory">{companyData.category}</p>
+                  <p>{company.name}</p>
+                  <p id="company-catagory">{company.category}</p>
                 </div>
                 <from id="modal-from">
                   <div>
