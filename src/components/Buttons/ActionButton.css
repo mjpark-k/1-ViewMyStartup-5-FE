@@ -26,11 +26,13 @@ button {
 }
 
 /* 다른 기업 비교하기 - 비활성화*/
-.company-comparison-inactive-button {
+.company-comparison-button.disabled {
   width: 183px;
   height: 48px;
   background-color: #2e2e2e;
   color: #747474;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /*기업 추가하기*/
