@@ -9,6 +9,7 @@ import { ActionButton } from "../Buttons/ActionButton";
 import Modal from "../modal/modal";
 import CompanyItem from "../ComapanyItem/CompanyItem";
 import ChipContent from "../ChipContent/ChipContent";
+import PaginationButton from "../Buttons/PaginationButton";
 
 function MyCompany({
   onSelectComplete,
@@ -19,12 +20,13 @@ function MyCompany({
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [companies, setCompanies] = useState([]);
   const [filteredCompanies, setFilteredCompanies] = useState([]);
   const [recentlySelectedCompanies, setRecentlySelectedCompanies] = useState(
     []
   );
-  // const [mySelectedCompany, setMySelectedCompany] = useState("");
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
+  const [page, setPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(null);
 
   useEffect(() => {
     const getCompanyData = async () => {
@@ -33,29 +35,20 @@ function MyCompany({
           "https://startup-38qa.onrender.com/startups",
           {
             params: {
-              limit: 1000,
+              keyword: input,
+              page: page,
+              limit: 5,
             },
           }
         );
-        setCompanies(response.data.data); // 데이터를 받아와 companies 상태에 저장
-        // 초기 상태 설정
         setFilteredCompanies(response.data.data);
+        setTotalCount(response.data.meta.total);
       } catch (error) {
         console.log("Failed to fetch companies:", error);
       }
     };
     getCompanyData();
-  }, []);
-  // 테스트
-  // console.log(companies);
-
-  // input 값이 변경될 때마다 필터링 작업 수행(철자 하나가 빠지는 오류 해결)
-  useEffect(() => {
-    const filtered = companies.filter((company) =>
-      company.name.includes(input)
-    );
-    setFilteredCompanies(filtered);
-  }, [input]);
+  }, [input, page]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -75,19 +68,12 @@ function MyCompany({
     setInput(value);
   };
 
-  const selectCompany = async (company) => {
-    // setMyNameData(company);
+  const selectCompany = async (id) => {
     const getSelectedCompany = async () => {
       const selectedCompany = await axios.get(
-        "https://startup-38qa.onrender.com/startups",
-        {
-          params: {
-            keyword: company,
-          },
-        }
+        `https://startup-38qa.onrender.com/startups/${id}`
       );
-
-      const newSelectedCompany = selectedCompany.data.data;
+      const newSelectedCompany = [selectedCompany.data];
 
       // 이미 선택된 회사인지 확인
       const isDuplicate = recentlySelectedCompanies.some(
@@ -115,8 +101,8 @@ function MyCompany({
   };
 
   // 확인 용도 (선택한 나의 기업)
-  // console.log(mySelectedCompany);
-  // console.log(otherSelectedCompanies);
+  console.log(mySelectedCompany);
+  console.log(otherSelectedCompanies);
 
   return (
     <>
@@ -159,9 +145,7 @@ function MyCompany({
               />
             ))}
           </ol>
-          <p className="modal-title">
-            검색 결과 ({(input ? filteredCompanies : []).length})
-          </p>
+          <p className="modal-title">검색 결과 ({input ? totalCount : 0})</p>
           <ol>
             {(input ? filteredCompanies : []).map((company) => (
               <CompanyItem
@@ -171,6 +155,16 @@ function MyCompany({
               />
             ))}
           </ol>
+          {input ? (
+            <PaginationButton
+              setPage={setPage}
+              setSelectedButtonIndex={setSelectedButtonIndex}
+              selectedButtonIndex={selectedButtonIndex}
+              input={input}
+              api={"search"}
+              size={"small"}
+            />
+          ) : null}
         </div>
       </Modal>
       <div className="company-choice-container">

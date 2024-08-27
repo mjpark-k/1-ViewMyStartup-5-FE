@@ -47,7 +47,7 @@ export default function PaginationButton({
       }
       setNumList(list);
     } else if (api === 'search') {
-      const length = await getAllDataLength({ input });
+      const length = await getAllDataLength(input);
       const totalPages = Math.ceil(length / 5);
       setButtonCount(totalPages);
       const list = [];
@@ -60,7 +60,7 @@ export default function PaginationButton({
 
   useEffect(() => {
     initializePagination();
-  }, []);
+  }, [input]);
 
   useEffect(() => {
     const buttonUpdate = numList.slice(pageNum * 5, (pageNum + 1) * 5);
