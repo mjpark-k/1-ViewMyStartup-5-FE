@@ -29,7 +29,7 @@ export default function PaginationButton({
 
   const initializePagination = async () => {
     if (api === 'invester') {
-      const length = await getInvesterLength({ id });
+      const length = await getInvesterLength({id});
       const totalPages = Math.ceil(length / 5);
       setButtonCount(totalPages);
       const list = [];
