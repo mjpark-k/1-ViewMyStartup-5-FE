@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import groupImage from "../../images/Mask group.svg";
 import styles from "./StartupList.module.css";
 
 function StartupList({ startupData }) {
+  const navigate = useNavigate();
+
+  const pathDetail = (id) => {
+    navigate(`/company/${id}`);
+  };
   return (
     <div className={styles.inner}>
       <ul className={styles.th}>
@@ -16,7 +22,11 @@ function StartupList({ startupData }) {
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
           <li>{startup.rank}</li>
-          <li>
+          <li
+            onClick={() => {
+              pathDetail(startup.id);
+            }}
+          >
             <img src={groupImage} alt="그룹 이미지" />
             {startup.name}
           </li>
