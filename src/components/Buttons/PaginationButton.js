@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import './PaginationButton.css';
-import { getInvesterLength, getAllDataLength, getCompanyLength } from '../../api.js';
+import {
+  getAllDataLength,
+  getCompanyLength,
+  getInvesterLength,
+} from '../../api.js';
 
 export default function PaginationButton({
   setPage,
@@ -8,8 +12,8 @@ export default function PaginationButton({
   setSelectedButtonIndex,
   size,
   id,
+  api,
   input,
-  api
 }) {
   const [buttonCount, setButtonCount] = useState(0);
   const [pageNum, setPageNum] = useState(0);

@@ -3,6 +3,7 @@ import InvestList from "../../components/InvestList/InvestList.js";
 import InvestTitle from "../../components/InvestList/InvestTitle.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import PaginationButton from "../../components/Buttons/PaginationButton";
 function InvestViewer() {
   const [ComparisonData, setComparisonData] = useState([]);
   const [ComparisonOption, setComparisonOption] = useState(
@@ -10,6 +11,9 @@ function InvestViewer() {
   );
   const [ComparisonorderBy, setComparisonOrderBy] = useState("");
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
+  const [page, setPage] = useState(1);
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
+  
   // const keywrods = ["엘리스", "코드잇"];
 
   useEffect(() => {
@@ -19,6 +23,7 @@ function InvestViewer() {
         {
           params: {
             // keyword: keywrods,
+            page: page,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
           },
@@ -28,7 +33,7 @@ function InvestViewer() {
       setComparisonData(response.data.data);
     };
     fetchData();
-  }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption]);
+  }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, page]);
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -52,6 +57,12 @@ function InvestViewer() {
         <InvestList
           startupData={ComparisonData}
           setstartupData={setComparisonData}
+        />
+        <PaginationButton
+          api={"company"}
+          selectedButtonIndex={selectedButtonIndex}
+          setSelectedButtonIndex={setSelectedButtonIndex}
+          setPage={setPage}
         />
       </div>
     </>

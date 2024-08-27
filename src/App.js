@@ -1,13 +1,18 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
-import CompareCompany from "./pages/CompareCompany/CompareCompany";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import StartupViewer from './pages/StartupPage/StartupViewer.js';
+import CompanyDetailPage from './pages/CompanyDetailPage/CompanyDetailPage.js';
+import Layout from './components/Layout/Layout.js';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.js';
 
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
-        <Route path="/myCompany" element={<CompareCompany />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<StartupViewer />} />
+          <Route path="/company/:id" element={<CompanyDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
