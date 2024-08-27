@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router-dom';
-import groupImage from '../../images/Mask group.svg';
-import styles from './StartupList.module.css';
+import { useNavigate } from "react-router-dom";
+import groupImage from "../../images/Mask group.svg";
+import styles from "./StartupList.module.css";
 
 function StartupList({ startupData }) {
   const navigate = useNavigate();
