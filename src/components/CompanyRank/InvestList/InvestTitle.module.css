@@ -38,9 +38,7 @@
   top: 56px;
   left: 0;
   width: 264px;
-  background-color: #131313;
   z-index: 1;
-
   background-color: rgba(19, 19, 19, 1);
 }
 
@@ -59,7 +57,7 @@
   border-radius: 10px 10px 0 0;
 }
 
-.menu li:nth-child(4) {
+.menu li:nth-child(6) {
   border-radius: 0 0 10px 10px;
 }
 

@@ -1,0 +1,109 @@
+.modal-content-investment {
+  width: 496px;
+  height: 858px;
+  background-color: rgba(33, 33, 33, 1);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+}
+
+#modal-title {
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+#modal-context {
+  font-size: 18px;
+  font-weight: 700;
+}
+#company-info {
+  display: flex;
+  flex-direction: column;
+
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: 700;
+}
+#company-info-text {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+#company-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+#company-catagory {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(116, 116, 116, 1);
+  margin-left: 8px;
+}
+#modal-from {
+  gap: 24px;
+}
+
+#modal-input {
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(116, 116, 116, 1);
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(255, 255, 255, 1);
+  height: 48px;
+  padding-left: 16px;
+}
+#modal-input-amount {
+  font-size: 14px;
+  margin-top: 16px;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(116, 116, 116, 1);
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(255, 255, 255, 1);
+  height: 108px;
+  padding-left: 16px;
+  padding-top: 20px;
+}
+#from-name {
+  margin-top: 24px;
+}
+#pass-container {
+  position: relative;
+}
+#eye_img {
+  position: absolute;
+  right: 20px;
+  top: 28px;
+  width: 24px;
+  height: 24px;
+}
+
+#btn-container {
+  display: flex;
+  margin-top: 24px;
+  justify-content: space-around;
+}
+
+.complete-modal {
+  background-color: rgba(33, 33, 33, 1);
+  width: 496px;
+  height: 186px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#modal-chk-title {
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px;
+  font-weight: 400;
+}

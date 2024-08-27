@@ -1,0 +1,49 @@
+.other-company-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 1200px;
+}
+
+.other-company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.other-company-content {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.other-company-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+}
+
+.number-limit {
+  line-height: 19.09px;
+}
+
+.other-company-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 300px;
+  background-color: #212121;
+}
+
+.other-company-chips {
+  /* 사용 예정 */
+  display: flex;
+  gap: 16px;
+}
+
+.empty-comment {
+  text-align: center;
+  font-size: 14px;
+  color: #747474;
+}

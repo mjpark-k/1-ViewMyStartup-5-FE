@@ -1,0 +1,12 @@
+body {
+  background-color: #131313;
+  color: #ffffff;
+  height: 1080px;
+}
+
+.compare-company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}

@@ -69,6 +69,8 @@ input::placeholder {
   width: 168px;
   background-color: #131313;
   z-index: 1;
+
+  background-color: rgba(19, 19, 19, 1);
 }
 
 .menu li {
