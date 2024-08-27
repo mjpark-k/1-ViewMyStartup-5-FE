@@ -20,7 +20,6 @@ function MyCompany({
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
-  // const [companies, setCompanies] = useState([]);
   const [filteredCompanies, setFilteredCompanies] = useState([]);
   const [recentlySelectedCompanies, setRecentlySelectedCompanies] = useState(
     []
@@ -28,7 +27,6 @@ function MyCompany({
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(null);
-  // const [mySelectedCompany, setMySelectedCompany] = useState(""); // 공유로 삭제
 
   useEffect(() => {
     const getCompanyData = async () => {
