@@ -7,7 +7,7 @@ import { deleteInvester, getCompany, getInvester } from "../../api.js";
 import Modal from "../../components/modal/modal.js";
 import DeleteModalForm from "../../components/CompanyDetail/Forms/DeleteModalForm.js";
 import DeleteFailForm from "../../components/CompanyDetail/Forms/DeleteFailForm.js";
-import AddStartup from "../../components/addStartup/addStartup.js";
+import { useParams } from 'react-router-dom';
 
 export default function CompanyDetailPage() {
   const [detail, setDetail] = useState([]);
@@ -23,8 +23,11 @@ export default function CompanyDetailPage() {
   const [password, setPassword] = useState(""); //삭제모달 비밀번호 인증
   const [investerId, setInvesterId] = useState(null); //투자자 id 상태관리
 
+  const { id } = useParams();
+
   const company = async () => {
-    const company = await getCompany();
+    const params = { id: id };
+    const company = await getCompany(params);
     setDetail(company);
   };
 

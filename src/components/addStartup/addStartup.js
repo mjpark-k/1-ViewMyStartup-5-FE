@@ -88,8 +88,8 @@ export function AddStartup({ addClick, company }) {
                 <div id="company-info-text">
                   <img id="company-img" src={companyImg}></img>
 
-                  <p>{company[0].name}</p>
-                  <p id="company-catagory">{company[0].category}</p>
+                  <p>{company.name}</p>
+                  <p id="company-catagory">{company.category}</p>
                 </div>
                 <form id="modal-from">
                   <div>

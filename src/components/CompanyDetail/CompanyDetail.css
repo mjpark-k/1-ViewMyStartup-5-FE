@@ -1,4 +1,4 @@
-.company-header {
+.detail-company-header {
   width: 1200px;
   height: 112px;
   display: flex;
@@ -6,24 +6,24 @@
   border-bottom: 1px solid #2e2e2e;
 }
 
-.company-logo {
+.detail-company-logo {
   width: 81.23px;
   height: 81.23px;
   border-radius: 50px;
 }
 
-.company-info {
+.detail-company-info {
   padding: 9.5px 0px;
   margin-left: 18px;
 }
 
-.company-name {
+.detail-company-name {
   font-weight: 700;
   font-size: 24px;
   color: #ffffff;
 }
 
-.company-category {
+.detail-company-category {
   color: #747474;
   font-weight: 500;
   font-size: 20px;
@@ -60,7 +60,7 @@
   color: #ffffff;
 }
 
-.company-description {
+.detail-company-description {
   width: 1196px;
   height: 287px;
   border-radius: 10px;
