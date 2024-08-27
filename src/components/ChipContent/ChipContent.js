@@ -2,6 +2,7 @@ import "./ChipContent.css";
 import imgTest from "../../images/img-test.svg";
 
 function ChipContent({ className, company }) {
+  console.log(company);
   return (
     <div className={className}>
       <div className="chip-info">

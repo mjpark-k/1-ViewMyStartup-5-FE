@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './PaginationButton.css';
-import { getInvesterLength } from '../../api.js';
+import { getInvesterLength, getAllDataLength, getCompanyLength } from '../../api.js';
 
 export default function PaginationButton({
   setPage,
@@ -8,6 +8,8 @@ export default function PaginationButton({
   setSelectedButtonIndex,
   size,
   id,
+  input,
+  api
 }) {
   const [buttonCount, setButtonCount] = useState(0);
   const [pageNum, setPageNum] = useState(0);
@@ -22,20 +24,39 @@ export default function PaginationButton({
   };
 
   const initializePagination = async () => {
-    const length = await getInvesterLength({id});
-    const totalPages = Math.ceil(length / 5);
-    setButtonCount(totalPages);
-
-    const list = [];
-    for (let i = 1; i <= totalPages; i++) {
-      list.push(i);
+    if (api === 'invester') {
+      const length = await getInvesterLength({ id });
+      const totalPages = Math.ceil(length / 5);
+      setButtonCount(totalPages);
+      const list = [];
+      for (let i = 1; i <= totalPages; i++) {
+        list.push(i);
+      }
+      setNumList(list);
+    } else if (api === 'company') {
+      const length = await getCompanyLength();
+      const totalPages = Math.ceil(length / 10);
+      setButtonCount(totalPages);
+      const list = [];
+      for (let i = 1; i <= totalPages; i++) {
+        list.push(i);
+      }
+      setNumList(list);
+    } else if (api === 'search') {
+      const length = await getAllDataLength(input);
+      const totalPages = Math.ceil(length / 5);
+      setButtonCount(totalPages);
+      const list = [];
+      for (let i = 1; i <= totalPages; i++) {
+        list.push(i);
+      }
+      setNumList(list);
     }
-    setNumList(list);
   };
 
   useEffect(() => {
     initializePagination();
-  }, []);
+  }, [input]);
 
   useEffect(() => {
     const buttonUpdate = numList.slice(pageNum * 5, (pageNum + 1) * 5);

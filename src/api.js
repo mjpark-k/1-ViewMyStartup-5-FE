@@ -12,6 +12,18 @@ export async function getCompany() {
   return company.data.data[0];
 }
 
+export async function getCompanyLength() {
+  const company = await api.get(`/startups`);
+  return company.data.meta.total;
+}
+
+export async function getAllDataLength(params) {
+  const query = `?keyword=${params}`;
+  const company = await api.get(`/startups${query}`);
+  console.log(company.data.meta.total);
+  return company.data.meta.total;
+}
+
 export async function getInvesterLength() {
   const invester = await api.get(
     `/startups/05e004c3-04a5-4b44-8f09-b0a55d51df0a/users`

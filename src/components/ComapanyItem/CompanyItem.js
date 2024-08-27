@@ -11,10 +11,11 @@ function CompanyItem({
 }) {
   const handleSelect = () => {
     if (!isSelected) {
-      onSelect(company.name);
+      onSelect(company.id);
     } else if (selectCancel && onDelete) {
       onDelete(company.id);
     }
+    console.log(company.id);
   };
 
   const getButtonText = () => {
