@@ -13,15 +13,17 @@ function ComparisonList({ startupData }) {
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
-          <li>{startup.rank}</li>
+          <li>{startup.rank}위</li>
           <li>
             <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li><div>{startup.description}</div></li>
+          <li>
+            <div>{startup.description}</div>
+          </li>
           <li>{startup.category}</li>
-          <li>{startup.count}회</li>
-          <li>{startup.actualInvest}억</li>
+          <li>{startup.count}</li>
+          <li>{startup.actualInvest}</li>
         </ul>
       ))}
     </div>
