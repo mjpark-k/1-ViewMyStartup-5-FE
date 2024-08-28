@@ -8,7 +8,7 @@ function InvestList({ startupData }) {
         <li>기업 명</li>
         <li>기업 소개</li>
         <li>카테고리</li>
-        <li>View My Startup 투자 금액</li>
+        <li>View My Startup <br className={styles.mobileTh} />투자 금액</li>
         <li>실제 누적 투자 금액</li>
       </ul>
       {startupData.map((startup, index) => (
