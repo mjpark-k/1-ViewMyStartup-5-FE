@@ -1,3 +1,9 @@
+.warning-statement {
+  color: #c41013;
+  text-align: center;
+  margin-top: -12px;
+}
+
 .other-company-container {
   display: flex;
   flex-direction: column;
@@ -37,7 +43,6 @@
 }
 
 .other-company-chips {
-  /* 사용 예정 */
   display: flex;
   gap: 16px;
 }
@@ -46,4 +51,68 @@
   text-align: center;
   font-size: 14px;
   color: #747474;
+}
+
+/* Tablet view */
+@media (min-width: 744px) and (max-width: 1199px) {
+  .other-company-container {
+    width: 696px;
+  }
+
+  .other-company-input {
+    width: 696px;
+    height: 239px;
+  }
+
+  .other-company-chips {
+    gap: 10px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 743px) {
+  .warning-statement {
+    color: #c41013;
+    text-align: center;
+    margin-top: -8px;
+  }
+
+  .other-company-container {
+    width: 343px;
+  }
+
+  .other-company-content {
+    gap: 4px;
+  }
+
+  .other-company-title {
+    font-size: 16px;
+  }
+
+  .number-limit {
+    font-size: 12px;
+  }
+
+  .other-company-input {
+    width: 343px;
+    height: 348px;
+  }
+
+  .other-company-chips {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .add-company-button {
+    width: 100px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .add-company-button.disabled {
+    width: 100px;
+    height: 32px;
+    font-size: 14px;
+  }
 }

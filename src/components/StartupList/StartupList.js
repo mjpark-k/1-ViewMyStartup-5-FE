@@ -21,7 +21,7 @@ function StartupList({ startupData }) {
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
-          <li>{startup.rank}</li>
+          <li>{startup.rank}위</li>
           <li
             onClick={() => {
               pathDetail(startup.id);
@@ -32,9 +32,9 @@ function StartupList({ startupData }) {
           </li>
           <li><div>{startup.description}</div></li>
           <li>{startup.category}</li>
-          <li>{startup.actualInvest}</li>
-          <li>{startup.revenue}</li>
-          <li>{startup.employees}</li>
+          <li>{startup.actualInvest}억 원</li>
+          <li>{startup.revenue}억 원</li>
+          <li>{startup.employees}명</li>
         </ul>
       ))}
     </div>

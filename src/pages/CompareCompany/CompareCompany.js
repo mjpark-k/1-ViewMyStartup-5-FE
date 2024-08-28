@@ -11,10 +11,10 @@ function CompareCompany() {
   const [selectComplete, setSelectComplete] = useState("");
   const [otherSelectedCompanies, setOtherSelectedCompanies] = useState([]);
   const [resultPage, setResultPage] = useState(false);
-  const isDisabled = otherSelectedCompanies.length === 0;
   const [NameData, setNameData] = useState([]);
   const [mySelectedCompany, setMySelectedCompany] = useState("");
   const [addClick, setaddClick] = useState(false);
+  const isDisabled = otherSelectedCompanies.length === 0;
 
   const handleClick = () => {
     if (!isDisabled) {
@@ -31,18 +31,30 @@ function CompareCompany() {
     }
   };
 
+  const handleFullReset = () => {
+    setMySelectedCompany("");
+    setOtherSelectedCompanies([]);
+    setSelectComplete("");
+    setNameData([]);
+    setResultPage(false);
+  };
+
   const addhandleClick = () => {
     setaddClick(!addClick);
   };
 
   return (
     <div className="compare-company">
+      <div
+        className={selectComplete ? "complete-empty-box" : "empty-box"}
+      ></div>
       <MyCompany
         onSelectComplete={setSelectComplete}
         otherSelectedCompanies={otherSelectedCompanies}
         setOtherSelectedCompanies={setOtherSelectedCompanies}
         mySelectedCompany={mySelectedCompany}
         setMySelectedCompany={setMySelectedCompany}
+        handleFullReset={handleFullReset}
       />
 
       {selectComplete && (
@@ -50,6 +62,8 @@ function CompareCompany() {
           <OtherCompany
             otherSelectedCompanies={otherSelectedCompanies}
             setOtherSelectedCompanies={setOtherSelectedCompanies}
+            mySelectedCompany={mySelectedCompany}
+            setMySelectedCompany={setMySelectedCompany}
           />
           <ActionButton
             className={`company-comparison-button ${

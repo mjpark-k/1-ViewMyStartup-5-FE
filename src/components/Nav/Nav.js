@@ -5,9 +5,11 @@ import "./Nav.css";
 function Nav() {
   return (
     <div className="nav-bar">
-      <NavLink to="/">
-        <img className="nav-logo" src={navLogo} alt="navLogo" />
-      </NavLink>
+      <div className="nav-logo-container">
+        <NavLink to="/">
+          <img className="nav-logo" src={navLogo} alt="navLogo" />
+        </NavLink>
+      </div>
       <div className="nav-link">
         <NavLink
           to="/myCompany"

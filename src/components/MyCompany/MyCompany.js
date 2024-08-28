@@ -17,6 +17,7 @@ function MyCompany({
   setOtherSelectedCompanies,
   mySelectedCompany,
   setMySelectedCompany,
+  handleFullReset,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -98,11 +99,8 @@ function MyCompany({
   const deselect = () => {
     setMySelectedCompany("");
     onSelectComplete("");
+    setOtherSelectedCompanies([]);
   };
-
-  // 확인 용도 (선택한 나의 기업)
-  console.log(mySelectedCompany);
-  console.log(otherSelectedCompanies);
 
   return (
     <>
@@ -133,7 +131,7 @@ function MyCompany({
               alt="search-button"
             />
           </div>
-          <p className="modal-title">
+          <p className="modal-title-inside">
             최근 선택된 기업 ({recentlySelectedCompanies.length})
           </p>
           <ol>
@@ -145,7 +143,7 @@ function MyCompany({
               />
             ))}
           </ol>
-          <p className="modal-title">검색 결과 ({input ? totalCount : 0})</p>
+          <p className="modal-title-inside">검색 결과 ({input ? totalCount : 0})</p>
           <ol>
             {(input ? filteredCompanies : []).map((company) => (
               <CompanyItem
@@ -175,11 +173,12 @@ function MyCompany({
               className={"initialization-button"}
               text={"전체 초기화"}
               option={"initialization"}
+              onClick={handleFullReset}
             />
           )}
         </div>
         <div className="company-choice-input">
-          {mySelectedCompany && (
+          {mySelectedCompany && otherSelectedCompanies.length === 0 && (
             <p className="deselect" onClick={deselect}>
               선택 취소
             </p>
@@ -197,7 +196,7 @@ function MyCompany({
                 alt="btn-plus"
                 onClick={openModal}
               />
-              <p>기업 추가</p>
+              <p className="title-plus">기업 추가</p>
             </div>
           )}
         </div>

@@ -5,15 +5,10 @@ ol {
   gap: 12px;
 }
 
-#modal-content {
-  width: 496px;
-}
-
 .modal-box {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* 지울 생각 */
   margin-top: 7px;
 }
 
@@ -21,6 +16,11 @@ ol {
   font-size: 20px;
   font-weight: 700;
   line-height: 23.87px;
+}
+
+.modal-title-inside {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .search-container {
@@ -64,7 +64,6 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 80px;
 }
 
 .company-choice-title {
@@ -81,6 +80,7 @@ ol {
   width: 1200px;
   height: 300px;
   background-color: #212121;
+  margin: auto;
 }
 
 .deselect {
@@ -103,4 +103,87 @@ ol {
   width: 48px;
   height: 48px;
   cursor: pointer;
+}
+
+.title-plus {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Tablet view */
+@media (min-width: 744px) and (max-width: 1199px) {
+  .company-choice-container {
+    width: 696px;
+  }
+
+  .company-choice-input {
+    width: 696px;
+    height: 240px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 743px) {
+  .modal-content {
+    padding: 16px;
+  }
+  .modal-box {
+    gap: 16px;
+  }
+
+  .modal-title {
+    font-size: 16px;
+  }
+
+  .modal-title-inside {
+    font-size: 14px;
+  }
+
+  .search-input {
+    width: 311px;
+    height: 40px;
+  }
+
+  .search-delete {
+    top: 12px;
+  }
+
+  .search-button {
+    top: 8px;
+  }
+
+  .company-choice-container {
+    width: 343px;
+  }
+
+  .company-choice-title {
+    font-size: 16px;
+    line-height: 19.09px;
+  }
+
+  .company-choice-input {
+    width: 343px;
+    height: 180px;
+  }
+
+  .deselect {
+    font-size: 12px;
+  }
+
+  .initialization-box {
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .initialization-button {
+    width: 116px;
+    height: 32px;
+    font-size: 14px;
+    padding: 0px;
+    justify-content: center;
+  }
+
+  .title-plus {
+    font-size: 14px;
+  }
 }

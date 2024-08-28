@@ -1,11 +1,18 @@
 .company-item-form {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .company-info {
   display: flex;
   gap: 16px;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
 .company-content {
@@ -21,4 +28,57 @@
 .company-category {
   font-size: 14px;
   color: #747474;
+}
+
+/* Mobile view */
+@media (max-width: 743px) {
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-name {
+    font-size: 14px;
+  }
+
+  .company-category {
+    font-size: 12px;
+  }
+
+  .select-button {
+    width: 73px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 16.71px;
+  }
+
+  .select-cancel-button {
+    width: 73px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .my-selected-company {
+    width: 73px;
+    height: 32px;
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .select-complete-button {
+    width: 73px;
+    height: 32px;
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .complete {
+    width: 12px;
+    height: 7px;
+  }
+
+  .complete-box {
+  justify-content: center;
+  }
 }
