@@ -10,16 +10,13 @@ export default function CompanyDetail({ companyData }) {
   const openHandler = () => {
     setaddClick(!addClick);
   };
+  console.log(company);
 
   return (
     <>
       <Addstartup company={[company]} addClick={addClick} />
       <div className="detail-company-header">
-        <img
-          className="detail-company-logo"
-          src={"../../../public/images/samsung.png"}
-          alt="logo"
-        />
+        <img className="detail-company-logo" src={company.image} alt="logo" />
         <div className="detail-company-info">
           <div className="detail-company-name">{company.name}</div>
           <div className="detail-company-category">{company.category}</div>

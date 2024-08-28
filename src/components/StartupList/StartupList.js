@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import groupImage from "../../images/Mask group.svg";
 import styles from "./StartupList.module.css";
 
 function StartupList({ startupData }) {
@@ -28,7 +27,7 @@ function StartupList({ startupData }) {
               pathDetail(startup.id);
             }}
           >
-            <img src={groupImage} alt="그룹 이미지" />
+            <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
           <li>{startup.description}</li>

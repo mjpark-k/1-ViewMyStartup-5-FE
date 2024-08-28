@@ -31,28 +31,33 @@ function InvestViewer() {
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, page]);
 
+  // }, [oderBy, sortOder]);
   return (
     <>
-      <div id="InvestViewer">
-        <InvestTitle
-          selectedOption={ComparisonOption}
-          setSelectedOption={setComparisonOption}
-          sortOrder={ComparisonsortOrder}
-          setSortOrder={setComparisonSortOrder}
-          orderBy={ComparisonorderBy}
-          setOrderBy={setComparisonOrderBy}
-        />
-        <InvestList
-          startupData={ComparisonData}
-          setstartupData={setComparisonData}
-        />
-        <PaginationButton
-          api={"company"}
-          selectedButtonIndex={selectedButtonIndex}
-          setSelectedButtonIndex={setSelectedButtonIndex}
-          setPage={setPage}
-        />
-      </div>
+      {ComparisonData.length === 0 ? (
+        <div id="no-data">아직 투자 현황이 없어요.</div>
+      ) : (
+        <div id="CompoersionViewer">
+          <InvestTitle
+            selectedOption={ComparisonOption}
+            setSelectedOption={setComparisonOption}
+            sortOrder={ComparisonsortOrder}
+            setSortOrder={setComparisonSortOrder}
+            orderBy={ComparisonorderBy}
+            setOrderBy={setComparisonOrderBy}
+          />
+          <InvestList
+            startupData={ComparisonData}
+            setstartupData={setComparisonData}
+          />
+          <PaginationButton
+            api={"company"}
+            selectedButtonIndex={selectedButtonIndex}
+            setSelectedButtonIndex={setSelectedButtonIndex}
+            setPage={setPage}
+          />
+        </div>
+      )}
     </>
   );
 }
