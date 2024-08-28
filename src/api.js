@@ -19,6 +19,10 @@ export async function getCompanyLength() {
 }
 
 export async function getAllDataLength(params) {
+  if(!params) {
+    const company = await api.get(`/startups`);
+    return company.data.meta.total;
+  }
   const query = `?keyword=${params}`;
   const company = await api.get(`/startups${query}`);
   return company.data.meta.total;
