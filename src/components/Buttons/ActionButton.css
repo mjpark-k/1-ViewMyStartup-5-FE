@@ -42,11 +42,13 @@ button {
 }
 
 /*기업 추가하기 - 비활성화*/
-.add-company-inactive-button {
+.add-company-button.disabled {
   width: 135px;
   height: 40px;
   background-color: #2e2e2e;
   color: #747474;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /*선택하기*/
@@ -61,7 +63,7 @@ button {
 }
 
 /* 선택 해제 */
-.select-complete-button.cancel {
+.select-cancel-button {
   background-color: #212121;
   width: 104px;
   height: 48px;
@@ -81,17 +83,21 @@ button {
   color: #d8d8d8;
   font-weight: 500;
   padding: 11px 12px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-/* 선택 해제 */
-.select-cancel-button {
+.my-selected-company {
   background-color: #212121;
   width: 104px;
   height: 48px;
   border-radius: 10px;
-  border: 1px solid #747474;
-  color: #747474;
+  border: 1px solid #0ff007f1;
+  color: #0ff007f1;
   font-weight: 500;
+  padding: 11px 12px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* 기업 투자 모달 - 투자하기*/

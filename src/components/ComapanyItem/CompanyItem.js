@@ -1,5 +1,4 @@
 import "./CompanyItem.css";
-import imgTest from "../../images/img-test.svg";
 import { ActionButton } from "../Buttons/ActionButton";
 
 function CompanyItem({
@@ -8,6 +7,7 @@ function CompanyItem({
   isSelected,
   onDelete,
   selectCancel,
+  isMyCompany,
 }) {
   const handleSelect = () => {
     if (!isSelected) {
@@ -23,17 +23,23 @@ function CompanyItem({
       return "선택해제";
     } else if (isSelected) {
       return "선택완료";
+    } else if (isMyCompany) {
+      return "나의 기업";
     } else {
       return "선택하기";
     }
   };
 
   const getButtonClassName = () => {
-    let className = isSelected ? "select-complete-button" : "select-button";
     if (selectCancel) {
-      className += " cancel";
+      return "select-cancel-button";
+    } else if (isMyCompany) {
+      return "my-selected-company";
+    } else if (isSelected) {
+      return "select-complete-button";
+    } else {
+      return "select-button";
     }
-    return className;
   };
 
   const buttonText = getButtonText();
@@ -42,7 +48,7 @@ function CompanyItem({
   return (
     <div className="company-item-form">
       <div className="company-info">
-        <img className="company-logo" src={imgTest} alt="imgTest" />
+        <img className="company-logo" src={company.image} alt={company.name} />
         <div className="company-content">
           <p className="company-name">{company.name}</p>
           <p className="company-category">{company.category}</p>
@@ -51,6 +57,9 @@ function CompanyItem({
       <ActionButton
         className={buttonClassName}
         text={buttonText}
+        option={`${
+          buttonClassName === "select-complete-button" ? "complete" : ""
+        }`}
         onClick={handleSelect}
       />
     </div>
