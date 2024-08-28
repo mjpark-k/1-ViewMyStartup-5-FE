@@ -10,3 +10,45 @@ body {
   align-items: center;
   gap: 24px;
 }
+
+.empty-box {
+  height: 56px;
+}
+
+.complete-empty-box {
+  height: 16px;
+}
+
+/* Tablet view */
+@media (min-width: 744px) and (max-width: 1199px) {
+  body {
+    height: 1133px;
+  }
+
+  .empty-box {
+    height: 16px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 743px) {
+  body {
+    height: 812px;
+  }
+
+  .empty-box {
+    height: 8px;
+  }
+
+  .company-comparison-button {
+    width: 135px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .company-comparison-button.disabled {
+    width: 135px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
