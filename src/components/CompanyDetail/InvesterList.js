@@ -8,7 +8,7 @@ export default function InvesterList({
   dropdownClick,
 }) {
   return (
-    <div>
+    <div className='overflow-box'>
       <div className="simInvest-header-row">
         <div className="invester-name">투자자 이름</div>
         <div className="invester-rank">순위</div>

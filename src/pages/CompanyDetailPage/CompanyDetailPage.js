@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import PaginationButton from "../../components/Buttons/PaginationButton.js";
-import "./CompanyDetailPage.css";
-import InvesterList from "../../components/CompanyDetail/InvesterList.js";
-import CompanyDetail from "../../components/CompanyDetail/CompanyDetail.js";
-import { deleteInvester, getCompany, getInvester } from "../../api.js";
-import Modal from "../../components/modal/modal.js";
-import DeleteModalForm from "../../components/CompanyDetail/Forms/DeleteModalForm.js";
-import DeleteFailForm from "../../components/CompanyDetail/Forms/DeleteFailForm.js";
+import { useEffect, useState } from 'react';
+import PaginationButton from '../../components/Buttons/PaginationButton.js';
+import './CompanyDetailPage.css';
+import InvesterList from '../../components/CompanyDetail/InvesterList.js';
+import CompanyDetail from '../../components/CompanyDetail/CompanyDetail.js';
+import { deleteInvester, getCompany, getInvester } from '../../api.js';
+import Modal from '../../components/modal/modal.js';
+import DeleteModalForm from '../../components/CompanyDetail/Forms/DeleteModalForm.js';
+import DeleteFailForm from '../../components/CompanyDetail/Forms/DeleteFailForm.js';
 import { useParams } from 'react-router-dom';
 
 export default function CompanyDetailPage() {
@@ -20,7 +20,7 @@ export default function CompanyDetailPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFail, setIsFail] = useState(false);
 
-  const [password, setPassword] = useState(""); //삭제모달 비밀번호 인증
+  const [password, setPassword] = useState(''); //삭제모달 비밀번호 인증
   const [investerId, setInvesterId] = useState(null); //투자자 id 상태관리
 
   const { id } = useParams();
@@ -32,7 +32,7 @@ export default function CompanyDetailPage() {
   };
 
   const investers = async () => {
-    const params = { page: page };
+    const params = { page: page, id: id };
     const investers = await getInvester(params);
     setInvester(investers);
   };
@@ -54,8 +54,7 @@ export default function CompanyDetailPage() {
     e.preventDefault();
     const findInvesterId = invester.find((data) => data.id === investerId);
     if (findInvesterId.password === password) {
-      deleteInvester(findInvesterId.id);
-      window.location.reload();
+      deleteInvester(findInvesterId.id).then(() => window.location.reload());
     } else {
       setIsFail(true);
     }
@@ -109,8 +108,11 @@ export default function CompanyDetailPage() {
           investerList={invester}
           setSelectedButtonIndex={setSelectedButtonIndex}
           selectedButtonIndex={selectedButtonIndex}
+          api={'invester'}
+          id={id}
         />
       )}
+      <div className='detail-page-modal'>
       <Modal
         children={
           isFail ? (
@@ -124,8 +126,9 @@ export default function CompanyDetailPage() {
         }
         isOpen={isModalOpen}
         closeModal={closeModalClick}
-        className={"modal-content"}
+        className={'modal-content'}
       />
+      </div>
     </div>
   );
 }
