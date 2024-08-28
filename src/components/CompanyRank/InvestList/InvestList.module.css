@@ -11,10 +11,6 @@
   margin: 0 0 16px 0;
 }
 
-.mobileTh {
-  display: none;
-}
-
 .th li {
   display: flex;
   align-items: center;
@@ -44,7 +40,7 @@
 }
 
 .th li:nth-child(5) {
-  width: 230.63px;
+  width: 153.75px;
 }
 
 .th li:nth-child(6) {
@@ -109,7 +105,7 @@
 }
 
 .list li:nth-child(5) {
-  width: 230.63px;
+  width: 153.75px;
 }
 
 .list li:nth-child(6) {
@@ -140,19 +136,19 @@
 
   .th li:nth-child(3) {
     width: 25.86%;
-  }
-
-  .th li:nth-child(4) {
-    width: 12.07%;
-  }
-
-  .th li:nth-child(5) {
-    width: 16.67%;
     line-height: 16.71px;
   }
 
+  .th li:nth-child(4) {
+    width: 11.49%;
+  }
+
+  .th li:nth-child(5) {
+    width: 11.3%;
+  }
+
   .th li:nth-child(6) {
-    width: 16.67%;
+    width: 11.3%;
   }
 
   .list {
@@ -173,15 +169,15 @@
   }
 
   .list li:nth-child(4) {
-    width: 12.07%;
+    width: 11.49%;
   }
 
   .list li:nth-child(5) {
-    width: 16.67%;
+    width: 11.3%;
   }
 
   .list li:nth-child(6) {
-    width: 16.67%;
+    width: 11.3%;
   }
 }
 
@@ -220,16 +216,15 @@
   }
 
   .th li:nth-child(4) {
-    width: 12.07%;
+    width: 11.49%;
   }
 
   .th li:nth-child(5) {
-    width: 16.67%;
-    line-height: 16.71px;
+    width: 11.3%;
   }
 
   .th li:nth-child(6) {
-    width: 16.67%;
+    width: 11.3%;
   }
 
   .list {
@@ -251,14 +246,14 @@
   }
 
   .list li:nth-child(4) {
-    width: 12.07%;
+    width: 11.49%;
   }
 
   .list li:nth-child(5) {
-    width: 16.67%;
+    width: 11.3%;
   }
 
   .list li:nth-child(6) {
-    width: 16.67%;
+    width: 11.3%;
   }
 }

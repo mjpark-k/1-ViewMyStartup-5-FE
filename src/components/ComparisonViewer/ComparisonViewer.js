@@ -44,7 +44,7 @@ function ComparisonViewer({ keyword, MyNameData }) {
 
   return (
     <>
-      <div id="CompoersionViewer">
+      <div id="ComparisonViewer">
         <ComparisonInvestTitle
           selectedOption={ComparisonOption}
           setSelectedOption={setComparisonOption}
