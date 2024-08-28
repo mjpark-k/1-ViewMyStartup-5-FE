@@ -18,7 +18,7 @@ function ComparisonList({ startupData }) {
             <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li>{startup.description}</li>
+          <li><div>{startup.description}</div></li>
           <li>{startup.category}</li>
           <li>{startup.count}회</li>
           <li>{startup.actualInvest}억</li>

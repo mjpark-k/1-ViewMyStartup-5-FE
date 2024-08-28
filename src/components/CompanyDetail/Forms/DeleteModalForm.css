@@ -17,3 +17,32 @@
   display: flex;
   align-items: center;
 }
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .delete-modal-form {
+    width: 311px;
+    height: 193px;
+  }
+
+  .delete-fail-text {
+    width: 311px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 40px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .form-text {
+    font-size: 16px;
+    width: 311px;
+  }
+
+  .delete-modal-form > .modal-button {
+    width: 135px;
+    height: 44px;
+    font-size: 14px;
+  }
+}

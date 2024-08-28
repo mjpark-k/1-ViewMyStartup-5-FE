@@ -30,7 +30,7 @@ function StartupList({ startupData }) {
             <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li>{startup.description}</li>
+          <li><div>{startup.description}</div></li>
           <li>{startup.category}</li>
           <li>{startup.actualInvest}</li>
           <li>{startup.revenue}</li>
