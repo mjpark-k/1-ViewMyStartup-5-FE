@@ -102,10 +102,6 @@ function MyCompany({
     setOtherSelectedCompanies([]);
   };
 
-  // 확인 용도 (선택한 나의 기업)
-  console.log(mySelectedCompany);
-  console.log(otherSelectedCompanies);
-
   return (
     <>
       <Modal

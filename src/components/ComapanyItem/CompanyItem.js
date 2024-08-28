@@ -15,7 +15,6 @@ function CompanyItem({
     } else if (selectCancel && onDelete) {
       onDelete(company.id);
     }
-    console.log(company.id);
   };
 
   const getButtonText = () => {
