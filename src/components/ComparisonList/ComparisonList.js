@@ -23,7 +23,7 @@ function ComparisonList({ startupData }) {
           </li>
           <li>{startup.category}</li>
           <li>{startup.count}</li>
-          <li>{startup.actualInvest}</li>
+          <li>{startup.count}</li>
         </ul>
       ))}
     </div>
