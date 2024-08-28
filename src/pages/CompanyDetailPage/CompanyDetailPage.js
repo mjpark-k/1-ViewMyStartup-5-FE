@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import PaginationButton from '../../components/Buttons/PaginationButton.js';
-import './CompanyDetailPage.css';
-import InvesterList from '../../components/CompanyDetail/InvesterList.js';
-import CompanyDetail from '../../components/CompanyDetail/CompanyDetail.js';
-import { deleteInvester, getCompany, getInvester } from '../../api.js';
-import Modal from '../../components/modal/modal.js';
-import DeleteModalForm from '../../components/CompanyDetail/Forms/DeleteModalForm.js';
-import DeleteFailForm from '../../components/CompanyDetail/Forms/DeleteFailForm.js';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import PaginationButton from "../../components/Buttons/PaginationButton.js";
+import "./CompanyDetailPage.css";
+import InvesterList from "../../components/CompanyDetail/InvesterList.js";
+import CompanyDetail from "../../components/CompanyDetail/CompanyDetail.js";
+import { deleteInvester, getCompany, getInvester } from "../../api.js";
+import Modal from "../../components/modal/modal.js";
+import DeleteModalForm from "../../components/CompanyDetail/Forms/DeleteModalForm.js";
+import DeleteFailForm from "../../components/CompanyDetail/Forms/DeleteFailForm.js";
+import { useParams } from "react-router-dom";
 
 export default function CompanyDetailPage() {
   const [detail, setDetail] = useState([]);
