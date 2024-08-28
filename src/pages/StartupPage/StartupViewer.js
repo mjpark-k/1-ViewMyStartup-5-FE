@@ -64,6 +64,7 @@ function ComparisonViewer() {
           selectedButtonIndex={selectedButtonIndex}
           setSelectedButtonIndex={setSelectedButtonIndex}
           setPage={setPage}
+          keyword={keyword}
         />
       </div>
     </>
