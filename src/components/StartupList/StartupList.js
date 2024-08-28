@@ -7,6 +7,7 @@ function StartupList({ startupData }) {
   const pathDetail = (id) => {
     navigate(`/company/${id}`);
   };
+  
   return (
     <div className={styles.inner}>
       <ul className={styles.th}>
