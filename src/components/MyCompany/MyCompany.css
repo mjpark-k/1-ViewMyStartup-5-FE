@@ -35,6 +35,7 @@ ol {
   border: 1px solid #747474;
   background-color: #212121;
   color: #d8d8d8;
+  margin: 0;
 }
 
 .search-delete {

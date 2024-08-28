@@ -10,23 +10,20 @@ export default function CompanyDetail({ companyData }) {
   const openHandler = () => {
     setaddClick(!addClick);
   };
+  console.log(company);
 
   return (
     <>
-      <Addstartup company={company} addClick={addClick} />
-      <div className="company-header">
-        <img
-          className="company-logo"
-          src={"../../../public/images/samsung.png"}
-          alt="logo"
-        />
-        <div className="company-info">
-          <div className="company-name">{company.name}</div>
-          <div className="company-category">{company.category}</div>
+      <Addstartup company={[company]} addClick={addClick} />
+      <div className="detail-company-header">
+        <img className="detail-company-logo" src={company.image} alt="logo" />
+        <div className="detail-company-info">
+          <div className="detail-company-name">{company.name}</div>
+          <div className="detail-company-category">{company.category}</div>
         </div>
       </div>
 
-      <div className="company-stats">
+      <div className="detail-company-stats">
         <div className="stat-item">
           <div className="stat-label">누적 투자 금액</div>
           <div className="stat-value">{company.actualInvest}억 원</div>
@@ -40,7 +37,7 @@ export default function CompanyDetail({ companyData }) {
           <div className="stat-value">{company.employees}명</div>
         </div>
       </div>
-      <div className="company-description">
+      <div className="detail-company-description">
         <div className="company-description-label">기업 소개</div>
         <div className="company-description-value">{company.description}</div>
       </div>

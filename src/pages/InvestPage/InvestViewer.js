@@ -13,7 +13,7 @@ function InvestViewer() {
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-  
+
   // const keywrods = ["엘리스", "코드잇"];
 
   useEffect(() => {
@@ -42,29 +42,32 @@ function InvestViewer() {
   //   };
   //   fetchData();
   // }, [oderBy, sortOder]);
-
   return (
     <>
-      <div id="CompoersionViewer">
-        <InvestTitle
-          selectedOption={ComparisonOption}
-          setSelectedOption={setComparisonOption}
-          sortOrder={ComparisonsortOrder}
-          setSortOrder={setComparisonSortOrder}
-          orderBy={ComparisonorderBy}
-          setOrderBy={setComparisonOrderBy}
-        />
-        <InvestList
-          startupData={ComparisonData}
-          setstartupData={setComparisonData}
-        />
-        <PaginationButton
-          api={"company"}
-          selectedButtonIndex={selectedButtonIndex}
-          setSelectedButtonIndex={setSelectedButtonIndex}
-          setPage={setPage}
-        />
-      </div>
+      {ComparisonData.length === 0 ? (
+        <div id="no-data">아직 투자 현황이 없어요.</div>
+      ) : (
+        <div id="CompoersionViewer">
+          <InvestTitle
+            selectedOption={ComparisonOption}
+            setSelectedOption={setComparisonOption}
+            sortOrder={ComparisonsortOrder}
+            setSortOrder={setComparisonSortOrder}
+            orderBy={ComparisonorderBy}
+            setOrderBy={setComparisonOrderBy}
+          />
+          <InvestList
+            startupData={ComparisonData}
+            setstartupData={setComparisonData}
+          />
+          <PaginationButton
+            api={"company"}
+            selectedButtonIndex={selectedButtonIndex}
+            setSelectedButtonIndex={setSelectedButtonIndex}
+            setPage={setPage}
+          />
+        </div>
+      )}
     </>
   );
 }

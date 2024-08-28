@@ -1,5 +1,4 @@
 import "./CompanyItem.css";
-import imgTest from "../../images/img-test.svg";
 import { ActionButton } from "../Buttons/ActionButton";
 
 function CompanyItem({
@@ -42,7 +41,7 @@ function CompanyItem({
   return (
     <div className="company-item-form">
       <div className="company-info">
-        <img className="company-logo" src={imgTest} alt="imgTest" />
+        <img className="company-logo" src={company.image} alt="imgTest" />
         <div className="company-content">
           <p className="company-name">{company.name}</p>
           <p className="company-category">{company.category}</p>
