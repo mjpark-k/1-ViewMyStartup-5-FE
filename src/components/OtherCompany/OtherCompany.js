@@ -10,13 +10,19 @@ import CompanyItem from "../ComapanyItem/CompanyItem";
 import CompanyChip from "../CompanyChip/CompanyChip";
 import PaginationButton from "../Buttons/PaginationButton";
 
-function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
+function OtherCompany({
+  otherSelectedCompanies,
+  setOtherSelectedCompanies,
+  mySelectedCompany,
+  setMySelectedCompany,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [filteredCompanies, setFilteredCompanies] = useState([]);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(null);
+  const [showWarning, setShowWarning] = useState(false);
 
   useEffect(() => {
     const getCompanyData = async () => {
@@ -59,6 +65,11 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
   };
 
   const selectCompany = async (id) => {
+    if (otherSelectedCompanies.length >= 5) {
+      setShowWarning(true);
+      return;
+    }
+
     const getSelectedCompany = async () => {
       const selectedCompany = await axios.get(
         `https://startup-38qa.onrender.com/startups/${id}`
@@ -75,24 +86,28 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
           ...otherSelectedCompanies,
           ...newOtherSelectedCompany,
         ]);
+        setShowWarning(false);
       }
-      console.log(newOtherSelectedCompany);
     };
     getSelectedCompany();
   };
 
-  // CompanyItem isSelected 관리
+  // CompanyItem isSelected 관리 (버튼 구분)
   const isCompanySelected = (companyId) => {
     return otherSelectedCompanies.some((company) => company.id === companyId);
+  };
+
+  // CompanyItem isMyCompany 관리
+  const isMyCompanySelected = (companyId) => {
+    return mySelectedCompany.some((company) => company.id === companyId);
   };
 
   const deleteSelectedCompany = (companyId) => {
     setOtherSelectedCompanies((prevSelectedCompanies) =>
       prevSelectedCompanies.filter((company) => company.id !== companyId)
     );
+    setShowWarning(false);
   };
-
-  console.log(otherSelectedCompanies);
 
   return (
     <>
@@ -147,9 +162,15 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
                 onSelect={selectCompany}
                 selectCancel={false}
                 isSelected={isCompanySelected(company.id)} // 버튼 관리 (css, text)
+                isMyCompany={isMyCompanySelected(company.id)}
               />
             ))}
           </ol>
+          {showWarning && (
+            <div className="warning-statement">
+              ❗ 비교할 기업은 최대 5개까지 선택 가능합니다.
+            </div>
+          )}
           {input ? (
             <PaginationButton
               setPage={setPage}
@@ -169,7 +190,7 @@ function OtherCompany({ otherSelectedCompanies, setOtherSelectedCompanies }) {
             <h2 className="number-limit">(최대 5개)</h2>
           </div>
           <ActionButton
-            className={"add-company-button"}
+            className={`add-company-button ${otherSelectedCompanies.length === 5 ? "disabled" : ""}`}
             text={"기업 추가하기"}
             onClick={openModal}
           />
