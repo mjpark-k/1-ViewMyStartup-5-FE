@@ -13,7 +13,7 @@ export default function CompanyDetail({ companyData }) {
 
   return (
     <>
-      <Addstartup company={company} addClick={addClick} />
+      <Addstartup company={[company]} addClick={addClick} />
       <div className="detail-company-header">
         <img
           className="detail-company-logo"
