@@ -32,13 +32,12 @@ function InvestViewer() {
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, page]);
 
-  // }, [oderBy, sortOder]);
   return (
     <>
       {ComparisonData.length === 0 ? (
         <div id="no-data">아직 투자 현황이 없어요.</div>
       ) : (
-        <div id="CompoersionViewer">
+        <div id="InvestViewer">
           <InvestTitle
             selectedOption={ComparisonOption}
             setSelectedOption={setComparisonOption}
