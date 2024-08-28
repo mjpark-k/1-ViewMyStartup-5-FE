@@ -1,28 +1,3 @@
-.investment-detail-header {
-  width: 1200px;
-  height: 40px;
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.investment-detail-header-label {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.simInvest {
-  width: 1200px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  padding: 16px 0px;
-  margin-top: 24px;
-  border-top: 1px solid #2e2e2e;
-}
-
 .simInvest-header-row {
   width: 1200px;
   height: 39px;
@@ -118,6 +93,53 @@
   border-radius: 4px 4px 0px 0px;
 }
 
-.invester-list-container > :nth-child(5) {
+.invester-list-container > :last-child {
+  border-bottom: 0;
   border-radius: 0px 0px 4px 4px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .overflow-box {
+    width: 697px;
+  }
+
+  .investment-comment {
+    width: 381px;
+  }
+
+  .investment-comment-value {
+    width: 381px;
+  }
+
+  .simInvest-header-row,
+  .invester-list {
+    width: 697px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .overflow-box {
+    height: 395px;
+    max-width: 359px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 16px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 101px;
+    background: #131313;
+    border: 2px solid #212121;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #212121;
+    border-radius: 8px;
+  }
 }

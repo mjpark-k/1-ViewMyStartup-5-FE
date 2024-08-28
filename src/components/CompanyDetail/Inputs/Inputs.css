@@ -1,6 +1,6 @@
 label {
   width: 448px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -8,7 +8,7 @@ label {
 .password-input {
   width: 448px;
   height: 48px;
-  padding: 20px 10px;
+  padding-left: 20px;
   border: 1px solid #747474;
   border-radius: 10px;
   color: #747474;
@@ -17,18 +17,36 @@ label {
   background-color: #212121;
   margin-top: 16px;
   margin-bottom: 32px;
+  margin-right: 0;
 }
 
 .password-eye {
-  width: 20.39px;
+  width: 21px;
   height: 14px;
   background-image: url('../../../images/visibility-eye.png');
   background-size: cover;
   position: absolute;
-  top: 33px;
-  right: 12px;
+  top: 30px;
+  right: 20px;
 }
 
 .password-input-box {
   position: relative;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  label {
+    width: 311px;
+    font-size: 14px;
+  }
+
+  .password-input {
+    width: 311px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 14px;
+    margin-bottom: 32px;
+    margin-right: 0;
+  }
 }

@@ -54,6 +54,7 @@ function StartupViewer() {
           selectedButtonIndex={selectedButtonIndex}
           setSelectedButtonIndex={setSelectedButtonIndex}
           setPage={setPage}
+          keyword={keyword}
         />
       </div>
     </>
