@@ -13,8 +13,6 @@ function InvestViewer() {
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-  
-  // const keywrods = ["엘리스", "코드잇"];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,30 +20,20 @@ function InvestViewer() {
         "https://startup-38qa.onrender.com/startups",
         {
           params: {
-            // keyword: keywrods,
             page: page,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
           },
         }
       );
-      // console.log(response.data.data);
       setComparisonData(response.data.data);
     };
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, page]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(oderBy);
-  //     console.log(sortOder);
-  //   };
-  //   fetchData();
-  // }, [oderBy, sortOder]);
-
   return (
     <>
-      <div id="CompoersionViewer">
+      <div id="InvestViewer">
         <InvestTitle
           selectedOption={ComparisonOption}
           setSelectedOption={setComparisonOption}

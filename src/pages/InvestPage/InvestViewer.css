@@ -1,14 +1,14 @@
-#CompoersionViewer {
+body {
+  background-color: #131313;
+}
+
+#InvestViewer {
   display: flex;
   margin: 0 auto;
-  width: 1200px;
-  background-color: #131313;
+  width: 100%;
   flex-direction: column;
 }
-#CompoersionViewer-title {
-  font-size: 20px;
-  font-weight: 700;
-}
+
 #no-data {
   position: absolute;
   left: 50%;

@@ -56,6 +56,7 @@ function StartupTitle({
       <h1 className={styles.title}>전체 스타트업 목록</h1>
       <div className={styles.box}>
         <input
+          className={styles.search}
           name="keyword"
           value={keyword}
           onChange={handleKeywordChange}

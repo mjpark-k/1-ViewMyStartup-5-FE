@@ -81,6 +81,7 @@
   justify-content: left;
   width: 17.75%;
   padding: 0 0 0 23.75px;
+  cursor: pointer;
 }
 
 .list li:nth-child(3) {
