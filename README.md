@@ -13,7 +13,7 @@
 - 프로젝트 기간: 2024. 08. 13(화) ~ 2024. 09. 03(수)
 
 # 기술 스택
-- FrontEnd  
+- **FrontEnd**  
 ![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 - BackEnd   
 ![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)![](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
@@ -32,6 +32,142 @@
 ### 안재민
 
 # 파일구조
+<details>
+  <summary>파일 구조</summary>
+  <pre>
+📦src
+ ┣ 📂components
+ ┃ ┣ 📂addStartup
+ ┃ ┃ ┣ 📂modal
+ ┃ ┃ ┃ ┣ 📜modal.css
+ ┃ ┃ ┃ ┗ 📜modal.js
+ ┃ ┃ ┣ 📜addStartup.css
+ ┃ ┃ ┗ 📜addStartup.js
+ ┃ ┣ 📂Buttons
+ ┃ ┃ ┣ 📜ActionButton.css
+ ┃ ┃ ┣ 📜ActionButton.js
+ ┃ ┃ ┣ 📜PaginationButton.css
+ ┃ ┃ ┗ 📜PaginationButton.js
+ ┃ ┣ 📂ChipContent
+ ┃ ┃ ┣ 📜ChipContent.css
+ ┃ ┃ ┗ 📜ChipContent.js
+ ┃ ┣ 📂ComapanyItem
+ ┃ ┃ ┣ 📜CompanyItem.css
+ ┃ ┃ ┗ 📜CompanyItem.js
+ ┃ ┣ 📂CompanyChip
+ ┃ ┃ ┣ 📜CompanyChip.css
+ ┃ ┃ ┗ 📜CompanyChip.js
+ ┃ ┣ 📂CompanyDetail
+ ┃ ┃ ┣ 📂Forms
+ ┃ ┃ ┃ ┣ 📜DeleteFailForm.css
+ ┃ ┃ ┃ ┣ 📜DeleteFailForm.js
+ ┃ ┃ ┃ ┣ 📜DeleteModalForm.css
+ ┃ ┃ ┃ ┗ 📜DeleteModalForm.js
+ ┃ ┃ ┣ 📂Inputs
+ ┃ ┃ ┃ ┣ 📜Inputs.css
+ ┃ ┃ ┃ ┗ 📜Inputs.js
+ ┃ ┃ ┣ 📜CompanyDetail.css
+ ┃ ┃ ┣ 📜CompanyDetail.js
+ ┃ ┃ ┣ 📜InvesterList.css
+ ┃ ┃ ┣ 📜InvesterList.js
+ ┃ ┃ ┣ 📜InvesterListDropdown.css
+ ┃ ┃ ┗ 📜InvesterListDropdown.js
+ ┃ ┣ 📂CompanyRank
+ ┃ ┃ ┣ 📂InvestList
+ ┃ ┃ ┃ ┣ 📜CompanyRankInvestList.js
+ ┃ ┃ ┃ ┣ 📜CompanyRankInvestTitle.js
+ ┃ ┃ ┃ ┣ 📜InvestList.module.css
+ ┃ ┃ ┃ ┗ 📜InvestTitle.module.css
+ ┃ ┃ ┣ 📜CompanyRank.css
+ ┃ ┃ ┗ 📜CompanyRank.js
+ ┃ ┣ 📂ComparisonList
+ ┃ ┃ ┣ 📜ComparisonList.js
+ ┃ ┃ ┣ 📜ComparisonList.module.css
+ ┃ ┃ ┣ 📜ComparisonTitle.js
+ ┃ ┃ ┗ 📜ComparisonTitle.module.css
+ ┃ ┣ 📂ComparisonViewer
+ ┃ ┃ ┣ 📂InvestList
+ ┃ ┃ ┃ ┣ 📜ComparisonInvestList.js
+ ┃ ┃ ┃ ┣ 📜ComparisonInvestTitle.js
+ ┃ ┃ ┃ ┣ 📜InvestList.module.css
+ ┃ ┃ ┃ ┗ 📜InvestTitle.module.css
+ ┃ ┃ ┣ 📜ComparisonViewer.css
+ ┃ ┃ ┗ 📜ComparisonViewer.js
+ ┃ ┣ 📂InvestList
+ ┃ ┃ ┣ 📜InvestList.js
+ ┃ ┃ ┣ 📜InvestList.module.css
+ ┃ ┃ ┣ 📜InvestTitle.js
+ ┃ ┃ ┗ 📜InvestTitle.module.css
+ ┃ ┣ 📂Layout
+ ┃ ┃ ┣ 📜Layout.css
+ ┃ ┃ ┗ 📜Layout.js
+ ┃ ┣ 📂modal
+ ┃ ┃ ┣ 📜modal.css
+ ┃ ┃ ┗ 📜modal.js
+ ┃ ┣ 📂MyCompany
+ ┃ ┃ ┣ 📜MyCompany.css
+ ┃ ┃ ┗ 📜MyCompany.js
+ ┃ ┣ 📂Nav
+ ┃ ┃ ┣ 📜Nav.css
+ ┃ ┃ ┗ 📜Nav.js
+ ┃ ┣ 📂OtherCompany
+ ┃ ┃ ┣ 📜OtherCompany.css
+ ┃ ┃ ┗ 📜OtherCompany.js
+ ┃ ┗ 📂StartupList
+ ┃ ┃ ┣ 📜StartupList.js
+ ┃ ┃ ┣ 📜StartupList.module.css
+ ┃ ┃ ┣ 📜StartupTitle.js
+ ┃ ┃ ┗ 📜StartupTitle.module.css
+ ┣ 📂images
+ ┃ ┣ 📜btn-plus.svg
+ ┃ ┣ 📜complete.png
+ ┃ ┣ 📜delete-chip.svg
+ ┃ ┣ 📜delete-img.svg
+ ┃ ┣ 📜ic_search.svg
+ ┃ ┣ 📜ic_toggle.svg
+ ┃ ┣ 📜initialization.png
+ ┃ ┣ 📜initialization.svg
+ ┃ ┣ 📜kebab.svg
+ ┃ ┣ 📜logo-img.svg
+ ┃ ┣ 📜Mask group.svg
+ ┃ ┣ 📜navLogo.png
+ ┃ ┣ 📜not-found.png
+ ┃ ┣ 📜page-before-button.png
+ ┃ ┣ 📜page-next-button.png
+ ┃ ┣ 📜pass-close.svg
+ ┃ ┣ 📜pass-open.svg
+ ┃ ┣ 📜search-button.svg
+ ┃ ┣ 📜search-delete.svg
+ ┃ ┗ 📜visibility-eye.png
+ ┣ 📂pages
+ ┃ ┣ 📂CompanyDetailPage
+ ┃ ┃ ┣ 📜CompanyDetailPage.css
+ ┃ ┃ ┗ 📜CompanyDetailPage.js
+ ┃ ┣ 📂CompareCompany
+ ┃ ┃ ┣ 📜CompareCompany.css
+ ┃ ┃ ┗ 📜CompareCompany.js
+ ┃ ┣ 📂ComparisonPage
+ ┃ ┃ ┣ 📜ComparisonViewer.css
+ ┃ ┃ ┗ 📜ComparisonViewer.js
+ ┃ ┣ 📂investment
+ ┃ ┃ ┣ 📜investment.css
+ ┃ ┃ ┗ 📜investment.js
+ ┃ ┣ 📂InvestPage
+ ┃ ┃ ┣ 📜InvestViewer.css
+ ┃ ┃ ┗ 📜InvestViewer.js
+ ┃ ┣ 📂NotFoundPage
+ ┃ ┃ ┣ 📜NotFoundPage.css
+ ┃ ┃ ┗ 📜NotFoundPage.js
+ ┃ ┗ 📂StartupPage
+ ┃ ┃ ┣ 📜StartupViewer.css
+ ┃ ┃ ┗ 📜StartupViewer.js
+ ┣ 📜api.js
+ ┣ 📜App.js
+ ┣ 📜index.css
+ ┣ 📜index.js
+ ┗ 📜reset.css
+  </pre>
+</details>
 
 # 구현 홈페이지
 링크
