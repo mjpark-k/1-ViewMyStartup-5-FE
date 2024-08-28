@@ -14,3 +14,15 @@
   cursor: pointer;
 }
 
+/* Mobile view */
+@media (max-width: 743px) {
+  .chip-container {
+    width: 104px;
+    height: 163px;
+  }
+
+  .delete-chip {
+    top: 8px;
+    right: 8px;
+  }
+}

@@ -13,18 +13,20 @@
 .chip-info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .chip-logo {
   width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 .chip-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .chip-name {
@@ -34,4 +36,20 @@
 .chip-category {
   font-size: 14px;
   color: #747474;
+}
+
+/* Mobile view */
+@media (max-width: 743px) {
+  .chip-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .chip-name {
+    font-size: 14px;
+  }
+
+  .chip-category {
+    font-size: 12px;
+  }
 }
