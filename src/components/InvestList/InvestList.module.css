@@ -72,6 +72,9 @@
 }
 
 .list li img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   margin: 0 17.75px 0 0;
   vertical-align: middle;
 }
@@ -88,17 +91,16 @@
   padding: 0 0 0 24px;
 }
 
-.list li:nth-child(3) {
+.list li:nth-child(3) > div {
   width: 304px;
+  height: 35px;
   line-height: 16.71px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  display: flex;
-  padding: 15px 16px;
+  padding: 0px 16px;
 }
 
 .list li:nth-child(4) {

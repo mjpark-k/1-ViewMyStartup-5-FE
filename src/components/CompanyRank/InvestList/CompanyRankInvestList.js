@@ -1,4 +1,3 @@
-import groupImage from "../../../images/logo-img.svg";
 import styles from "./InvestList.module.css";
 
 function InvestList({ startupData }) {
@@ -17,10 +16,10 @@ function InvestList({ startupData }) {
         <ul key={index} className={styles.list}>
           <li>{startup.rank}</li>
           <li>
-            <img src={groupImage} alt="그룹 이미지" />
+            <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li>{startup.description}</li>
+          <li><div>{startup.description}</div></li>
           <li>{startup.category}</li>
           <li>{startup.simInvest}억</li>
           <li>{startup.revenue}억</li>

@@ -1,7 +1,6 @@
 import Modal from "./modal/modal";
 import { useEffect, useState } from "react";
 import "./addStartup.css";
-import companyImg from "../../images/logo-img.svg";
 import passOpenImg from "../../images/pass-open.svg";
 import passCloseImg from "../../images/pass-close.svg";
 import { ActionButton } from "../Buttons/ActionButton.js";
@@ -86,10 +85,9 @@ export function AddStartup({ addClick, company }) {
               <div id="company-info">
                 <p>투자 기업 정보</p>
                 <div id="company-info-text">
-                  <img id="company-img" src={companyImg}></img>
-
-                  <p>{company.name}</p>
-                  <p id="company-catagory">{company.category}</p>
+                  <img id="company-img" src={company[0].image}></img>
+                  <p>{company[0].name}</p>
+                  <p id="company-catagory">{company[0].category}</p>
                 </div>
                 <form id="modal-from">
                   <div>

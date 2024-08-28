@@ -14,6 +14,7 @@ export default function PaginationButton({
   id,
   api,
   input,
+  keyword
 }) {
   const [buttonCount, setButtonCount] = useState(0);
   const [pageNum, setPageNum] = useState(0);
@@ -29,7 +30,7 @@ export default function PaginationButton({
 
   const initializePagination = async () => {
     if (api === 'invester') {
-      const length = await getInvesterLength({ id });
+      const length = await getInvesterLength({id});
       const totalPages = Math.ceil(length / 5);
       setButtonCount(totalPages);
       const list = [];
@@ -38,7 +39,7 @@ export default function PaginationButton({
       }
       setNumList(list);
     } else if (api === 'company') {
-      const length = await getCompanyLength();
+      const length = await getAllDataLength(keyword);
       const totalPages = Math.ceil(length / 10);
       setButtonCount(totalPages);
       const list = [];
@@ -60,7 +61,7 @@ export default function PaginationButton({
 
   useEffect(() => {
     initializePagination();
-  }, [input]);
+  }, [input, keyword]);
 
   useEffect(() => {
     const buttonUpdate = numList.slice(pageNum * 5, (pageNum + 1) * 5);

@@ -4,7 +4,7 @@ import StartupTitle from "../../components/StartupList/StartupTitle";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PaginationButton from "../../components/Buttons/PaginationButton";
-function ComparisonViewer() {
+function StartupViewer() {
   const [ComparisonData, setComparisonData] = useState([]);
   const [ComparisonOption, setComparisonOption] = useState("매출액 높은순");
   const [ComparisonorderBy, setComparisonOrderBy] = useState("");
@@ -12,8 +12,6 @@ function ComparisonViewer() {
   const [keyword, setKeyword] = useState("");
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
-
-  // const keywrods = ["엘리스", "코드잇"];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,26 +23,18 @@ function ComparisonViewer() {
             keyword: keyword,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
+            includeRanking: true,
           },
         }
       );
-      // console.log(response.data.data);
       setComparisonData(response.data.data);
     };
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, keyword, page]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(oderBy);
-  //     console.log(sortOder);
-  //   };
-  //   fetchData();
-  // }, [oderBy, sortOder]);
-
   return (
     <>
-      <div id="CompoersionViewer">
+      <div id="StartupViewer">
         <StartupTitle
           selectedOption={ComparisonOption}
           setSelectedOption={setComparisonOption}
@@ -64,10 +54,11 @@ function ComparisonViewer() {
           selectedButtonIndex={selectedButtonIndex}
           setSelectedButtonIndex={setSelectedButtonIndex}
           setPage={setPage}
+          keyword={keyword}
         />
       </div>
     </>
   );
 }
 
-export default ComparisonViewer;
+export default StartupViewer;

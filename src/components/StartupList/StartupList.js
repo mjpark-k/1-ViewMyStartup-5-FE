@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import groupImage from "../../images/Mask group.svg";
 import styles from "./StartupList.module.css";
 
 function StartupList({ startupData }) {
@@ -8,6 +7,7 @@ function StartupList({ startupData }) {
   const pathDetail = (id) => {
     navigate(`/company/${id}`);
   };
+  
   return (
     <div className={styles.inner}>
       <ul className={styles.th}>
@@ -21,20 +21,20 @@ function StartupList({ startupData }) {
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
-          <li>{startup.rank}</li>
+          <li>{startup.rank}위</li>
           <li
             onClick={() => {
               pathDetail(startup.id);
             }}
           >
-            <img src={groupImage} alt="그룹 이미지" />
+            <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li>{startup.description}</li>
+          <li><div>{startup.description}</div></li>
           <li>{startup.category}</li>
-          <li>{startup.actualInvest}</li>
-          <li>{startup.revenue}</li>
-          <li>{startup.employees}</li>
+          <li>{startup.actualInvest}억 원</li>
+          <li>{startup.revenue}억 원</li>
+          <li>{startup.employees}명</li>
         </ul>
       ))}
     </div>

@@ -28,7 +28,7 @@
   left: 12px;
 }
 
-input {
+.search {
   width: 448px;
   height: 48px;
   border: 1px solid #747474;
@@ -39,7 +39,7 @@ input {
   background-color: #131313;
 }
 
-input::placeholder {
+.search::placeholder {
   font-size: 14px;
   font-weight: 400;
 }
@@ -99,7 +99,7 @@ input::placeholder {
     padding: 40px 24px 16px 24px;
   }
 
-  input {
+  .search {
     width: 269px;
     margin: 0 12px 0 0;
   }
@@ -117,13 +117,13 @@ input::placeholder {
     padding: 0 0 16px 0;
   }
 
-  input {
+  .search {
     min-width: 189px;
     height: 40px;
     margin: 0 8px 0 0;
   }
 
-  input::placeholder {
+  .search::placeholder {
     font-size: 13px;
     font-weight: 400;
   }
