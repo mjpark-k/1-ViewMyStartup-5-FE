@@ -14,15 +14,17 @@ function InvestList({ startupData }) {
       </ul>
       {startupData.map((startup, index) => (
         <ul key={index} className={styles.list}>
-          <li>{startup.rank}</li>
+          <li>{startup.rank}위</li>
           <li>
             <img src={startup.image} alt="그룹 이미지" />
             {startup.name}
           </li>
-          <li><div>{startup.description}</div></li>
+          <li>
+            <div>{startup.description}</div>
+          </li>
           <li>{startup.category}</li>
-          <li>{startup.simInvest}억</li>
-          <li>{startup.revenue}억</li>
+          <li>{startup.simInvest}억 원</li>
+          <li>{startup.revenue}억 원</li>
           <li>{startup.employees}</li>
         </ul>
       ))}

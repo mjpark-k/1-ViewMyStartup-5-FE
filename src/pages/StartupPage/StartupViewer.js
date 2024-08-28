@@ -7,7 +7,7 @@ import PaginationButton from "../../components/Buttons/PaginationButton";
 function StartupViewer() {
   const [ComparisonData, setComparisonData] = useState([]);
   const [ComparisonOption, setComparisonOption] = useState("매출액 높은순");
-  const [ComparisonorderBy, setComparisonOrderBy] = useState("");
+  const [ComparisonorderBy, setComparisonOrderBy] = useState("revenue");
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
   const [keyword, setKeyword] = useState("");
   const [page, setPage] = useState(1);
@@ -20,6 +20,7 @@ function StartupViewer() {
         {
           params: {
             page: page,
+            limit: 10,
             keyword: keyword,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
@@ -28,6 +29,7 @@ function StartupViewer() {
         }
       );
       setComparisonData(response.data.data);
+      console.log(response);
     };
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, keyword, page]);

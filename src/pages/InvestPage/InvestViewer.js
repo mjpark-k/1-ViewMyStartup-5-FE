@@ -9,7 +9,7 @@ function InvestViewer() {
   const [ComparisonOption, setComparisonOption] = useState(
     "View My Startup 투자 금액 높은순"
   );
-  const [ComparisonorderBy, setComparisonOrderBy] = useState("");
+  const [ComparisonorderBy, setComparisonOrderBy] = useState("simInvest");
   const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
