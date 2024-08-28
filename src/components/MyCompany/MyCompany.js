@@ -143,7 +143,9 @@ function MyCompany({
               />
             ))}
           </ol>
-          <p className="modal-title-inside">검색 결과 ({input ? totalCount : 0})</p>
+          <p className="modal-title-inside">
+            검색 결과 ({input ? totalCount : 0})
+          </p>
           <ol>
             {(input ? filteredCompanies : []).map((company) => (
               <CompanyItem

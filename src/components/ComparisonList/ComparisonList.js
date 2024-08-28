@@ -23,7 +23,7 @@ function ComparisonList({ startupData }) {
           </li>
           <li>{startup.category}</li>
           <li>{startup.count}</li>
-          <li>{startup.count}</li>
+          <li>{startup.comparecount}</li>
         </ul>
       ))}
     </div>

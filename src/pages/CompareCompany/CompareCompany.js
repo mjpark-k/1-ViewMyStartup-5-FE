@@ -6,6 +6,7 @@ import "./CompareCompany.css";
 import ComparisonViewer from "../../components/ComparisonViewer/ComparisonViewer";
 import CompanyRank from "../../components/CompanyRank/CompanyRank";
 import AddStartup from "../../components/addStartup/addStartup";
+import axios from "axios";
 
 function CompareCompany() {
   const [selectComplete, setSelectComplete] = useState("");
@@ -16,7 +17,7 @@ function CompareCompany() {
   const [addClick, setaddClick] = useState(false);
   const isDisabled = otherSelectedCompanies.length === 0;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!isDisabled) {
       // 버튼이 활성화된 경우에만 동작 (이 부분을 통해 버튼 이용 컴포넌트 변경 등)
       for (let i = 0; i <= otherSelectedCompanies.length - 1; i++) {
@@ -24,6 +25,22 @@ function CompareCompany() {
           ...prevNameData,
           otherSelectedCompanies[i].name,
         ]);
+      }
+      // console.log(mySelectedCompany);
+      const res = await axios.patch(
+        `https://startup-38qa.onrender.com/startups/${mySelectedCompany[0].id}`,
+        {
+          count: mySelectedCompany[0].count + 1,
+        }
+      );
+
+      for (let j = 0; j <= otherSelectedCompanies.length - 1; j++) {
+        const res = await axios.patch(
+          `https://startup-38qa.onrender.com/startups/${otherSelectedCompanies[j].id}`,
+          {
+            comparecount: otherSelectedCompanies[j].comparecount + 1,
+          }
+        );
       }
 
       setSelectComplete(false);
