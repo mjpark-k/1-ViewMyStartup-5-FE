@@ -23,6 +23,7 @@ function InvestViewer() {
             page: page,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
+            includeRanking: true,
           },
         }
       );

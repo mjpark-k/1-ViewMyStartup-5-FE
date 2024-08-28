@@ -22,6 +22,7 @@ function ComparisonViewer() {
             page: page,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
+            includeRanking: true,
           },
         }
       );

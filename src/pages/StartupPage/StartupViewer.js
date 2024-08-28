@@ -23,6 +23,7 @@ function StartupViewer() {
             keyword: keyword,
             sortBy: ComparisonorderBy,
             sortOrder: ComparisonsortOrder,
+            includeRanking: true,
           },
         }
       );
