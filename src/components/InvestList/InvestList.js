@@ -22,7 +22,7 @@ function InvestList({ startupData }) {
               <img src={groupImage} alt="그룹 이미지" />
               {startup.name}
             </li>
-            <li>{startup.description}</li>
+            <li><div>{startup.description}</div></li>
             <li>{startup.category}</li>
             <li>{startup.simInvest}억</li>
             <li>{startup.actualInvest}억</li>
