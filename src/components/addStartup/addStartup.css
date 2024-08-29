@@ -108,3 +108,13 @@
   font-size: 15px;
   font-weight: 400;
 }
+@media (min-width: 744px) and (max-width: 1199px) {
+  .modal-content-investment {
+    width: 496px;
+  }
+}
+@media (max-width: 743px) {
+  .modal-content-investment {
+    width: 343px;
+  }
+}

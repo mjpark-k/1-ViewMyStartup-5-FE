@@ -67,6 +67,15 @@
   .flexBox {
     padding: 40px 24px 16px 24px;
   }
+  .toggle {
+    width: 148px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .menu {
+    width: 148px;
+    font-size: 12px;
+  }
 }
 
 /* Mobile view */
@@ -80,16 +89,14 @@
     font-size: 16px;
     padding: 0 0 16px 0;
   }
-
   .toggle {
-    width: 241px;
-    height: 40px;
-    font-size: 13px;
+    width: 148px;
+    font-size: 12px;
+    white-space: nowrap;
   }
-
   .menu {
-    width: 241px;
-    top: 48px;
+    width: 148px;
+    font-size: 12px;
   }
 
   .menu li {

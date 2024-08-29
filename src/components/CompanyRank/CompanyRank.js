@@ -6,7 +6,7 @@ import axios from 'axios';
 function ComparisonViewer({ keyword }) {
   const [startupData, setstartupData] = useState([]);
   const [selectedOption, setSelectedOption] = useState('누적 투자금액 낮은순');
-  const [orderBy, setOrderBy] = useState('');
+  const [orderBy, setOrderBy] = useState('simInvest');
   const [sortOrder, setSortOrder] = useState('');
 
   useEffect(() => {
