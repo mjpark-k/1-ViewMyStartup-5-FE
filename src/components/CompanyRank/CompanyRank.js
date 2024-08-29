@@ -39,7 +39,7 @@ function ComparisonViewer({ keyword }) {
 
   return (
     <>
-      <div id="CompoersionViewer">
+      <div id="ComparisonViewer">
         <ComparisonInvestTitle
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
