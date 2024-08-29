@@ -1,15 +1,15 @@
-import "./StartupViewer.css";
-import StartupList from "../../components/StartupList/StartupList";
-import StartupTitle from "../../components/StartupList/StartupTitle";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import PaginationButton from "../../components/Buttons/PaginationButton";
+import './StartupViewer.css';
+import StartupList from '../../components/StartupList/StartupList';
+import StartupTitle from '../../components/StartupList/StartupTitle';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import PaginationButton from '../../components/Buttons/PaginationButton';
 function StartupViewer() {
   const [ComparisonData, setComparisonData] = useState([]);
-  const [ComparisonOption, setComparisonOption] = useState("매출액 높은순");
-  const [ComparisonorderBy, setComparisonOrderBy] = useState("revenue");
-  const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
-  const [keyword, setKeyword] = useState("");
+  const [ComparisonOption, setComparisonOption] = useState('매출액 높은순');
+  const [ComparisonorderBy, setComparisonOrderBy] = useState('revenue');
+  const [ComparisonsortOrder, setComparisonSortOrder] = useState('desc');
+  const [keyword, setKeyword] = useState('');
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
 
@@ -52,7 +52,7 @@ function StartupViewer() {
           setstartupData={setComparisonData}
         />
         <PaginationButton
-          api={"company"}
+          api={'company'}
           selectedButtonIndex={selectedButtonIndex}
           setSelectedButtonIndex={setSelectedButtonIndex}
           setPage={setPage}
