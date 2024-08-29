@@ -10,7 +10,6 @@ export default function CompanyDetail({ companyData }) {
   const openHandler = () => {
     setaddClick(!addClick);
   };
-  console.log(company);
 
   return (
     <>
