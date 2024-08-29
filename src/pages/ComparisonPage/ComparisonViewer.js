@@ -9,7 +9,7 @@ function ComparisonViewer() {
   const [ComparisonOption, setComparisonOption] =
     useState("나의 기업 선택 횟수 높은순");
   const [ComparisonorderBy, setComparisonOrderBy] = useState("count");
-  const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
+  const [ComparisonsortOrder, setComparisonSortOrder] = useState("desc");
   const [page, setPage] = useState(1);
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(null);
 
