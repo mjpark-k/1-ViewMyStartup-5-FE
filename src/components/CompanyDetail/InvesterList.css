@@ -119,11 +119,14 @@
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .overflow-box {
-    height: 395px;
     max-width: 359px;
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 16px;
+  }
+
+  .invester-list-container {
+    padding-bottom: 8px;
   }
 
   ::-webkit-scrollbar {
