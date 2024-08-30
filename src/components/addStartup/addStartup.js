@@ -42,7 +42,6 @@ export function AddStartup({ addClick, company }) {
 
   const sendAction = async () => {
     if (pass !== pass2) {
-      console.log("error");
       return; // 비밀번호가 일치하지 않으면 함수 종료
     }
 
@@ -58,9 +57,6 @@ export function AddStartup({ addClick, company }) {
         `https://startup-38qa.onrender.com/startups/${company[0].id}/users`,
         data
       );
-      console.log(response.data);
-      console.log(company[0].id);
-
       setIsModalOpen(false);
       setIsComplete(true);
     } catch (error) {

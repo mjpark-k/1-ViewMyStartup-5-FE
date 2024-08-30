@@ -29,7 +29,6 @@ function StartupViewer() {
         }
       );
       setComparisonData(response.data.data);
-      console.log(response);
     };
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption, keyword, page]);
