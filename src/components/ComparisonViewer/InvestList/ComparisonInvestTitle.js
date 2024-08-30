@@ -24,10 +24,10 @@ function InvestTitle({
 
   const handleChange = (option) => {
     if (option === "누적 투자금액 높은순") {
-      setOrderBy("actualInvest");
+      setOrderBy("simInvest");
       setSortOrder("desc");
     } else if (option === "누적 투자금액 낮은순") {
-      setOrderBy("actualInvest");
+      setOrderBy("simInvest");
       setSortOrder("asc");
     } else if (option === "매출액 높은순") {
       setOrderBy("revenue");
