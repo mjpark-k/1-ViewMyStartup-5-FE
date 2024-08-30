@@ -26,7 +26,6 @@ function CompareCompany() {
           otherSelectedCompanies[i].name,
         ]);
       }
-      // console.log(mySelectedCompany);
       const res = await axios.patch(
         `https://startup-38qa.onrender.com/startups/${mySelectedCompany[0].id}`,
         {

@@ -17,7 +17,6 @@ function StartupTitle({
 
   const handleKeywordChange = (e) => {
     setKeyword(e.target.value);
-    console.log(keyword);
   };
 
   const handleButtonClick = useCallback((e) => {

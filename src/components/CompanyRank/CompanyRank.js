@@ -24,19 +24,10 @@ function ComparisonViewer({ keyword }) {
           },
         }
       );
-      // console.log(response.data.data);
       setstartupData(response.data.data);
     };
     fetchData();
   }, [orderBy, sortOrder, selectedOption]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(oderBy);
-  //     console.log(sortOder);
-  //   };
-  //   fetchData();
-  // }, [oderBy, sortOder]);
 
   return (
     <>

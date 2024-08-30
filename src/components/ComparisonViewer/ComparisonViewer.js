@@ -32,16 +32,6 @@ function ComparisonViewer({ keyword, MyNameData }) {
     fetchData();
   }, [ComparisonorderBy, ComparisonsortOrder, ComparisonOption]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(oderBy);
-  //     console.log(sortOder);
-  //   };
-  //   fetchData();
-  // }, [oderBy, sortOder]);
-
-  // console.log(keyword);
-
   return (
     <>
       <div id="ComparisonViewer">
