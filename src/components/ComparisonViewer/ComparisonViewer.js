@@ -8,7 +8,7 @@ function ComparisonViewer({ keyword, MyNameData }) {
   const [ComparisonOption, setComparisonOption] =
     useState("누적 투자금액 높은순");
   const [ComparisonorderBy, setComparisonOrderBy] = useState("simInvest");
-  const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
+  const [ComparisonsortOrder, setComparisonSortOrder] = useState("desc");
 
   useEffect(() => {
     keyword.push(MyNameData);
