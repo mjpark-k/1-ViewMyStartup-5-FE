@@ -34,6 +34,7 @@ function OtherCompany({
               keyword: input,
               page: page,
               limit: 5,
+              includeRanking: true,
             },
           }
         );
