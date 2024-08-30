@@ -18,6 +18,8 @@ function MyCompany({
   mySelectedCompany,
   setMySelectedCompany,
   handleFullReset,
+  resultPage,
+  setResultPage,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -100,8 +102,14 @@ function MyCompany({
   const deselect = () => {
     setMySelectedCompany("");
     onSelectComplete("");
-    setOtherSelectedCompanies([]);
   };
+
+  // 다른 기업 비교 클릭 시 나의 기업만 선택된 상태로
+  const selectAnotherCompany = () => {
+    onSelectComplete(true);
+    setOtherSelectedCompanies([]);
+    setResultPage(false);
+  }
 
   return (
     <>
@@ -173,10 +181,10 @@ function MyCompany({
           <h1 className="company-choice-title">나의 기업을 선택해주세요</h1>
           {otherSelectedCompanies.length > 0 && (
             <ActionButton
-              className={"initialization-button"}
-              text={"전체 초기화"}
-              option={"initialization"}
-              onClick={handleFullReset}
+              className={resultPage ? "other-company-comparison-button" : "initialization-button"}
+              text={resultPage ? "다른 기업 비교하기" : "전체 초기화"}
+              option={resultPage ? "" :"initialization"}
+              onClick={resultPage ? selectAnotherCompany : handleFullReset}
             />
           )}
         </div>

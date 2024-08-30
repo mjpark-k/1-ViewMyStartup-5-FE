@@ -183,6 +183,12 @@ ol {
     justify-content: center;
   }
 
+  .other-company-comparison-button {
+    width: 128px;
+    height: 32px;
+    font-size: 14px;
+  }
+
   .title-plus {
     font-size: 14px;
   }
