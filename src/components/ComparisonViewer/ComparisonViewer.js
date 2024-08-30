@@ -6,9 +6,9 @@ import axios from "axios";
 function ComparisonViewer({ keyword, MyNameData }) {
   const [ComparisonData, setComparisonData] = useState([]);
   const [ComparisonOption, setComparisonOption] =
-    useState("누적 투자금액 낮은순");
-  const [ComparisonorderBy, setComparisonOrderBy] = useState("");
-  const [ComparisonsortOrder, setComparisonSortOrder] = useState("");
+    useState("누적 투자금액 높은순");
+  const [ComparisonorderBy, setComparisonOrderBy] = useState("simInvest");
+  const [ComparisonsortOrder, setComparisonSortOrder] = useState("desc");
 
   useEffect(() => {
     keyword.push(MyNameData);

@@ -72,6 +72,8 @@ function CompareCompany() {
         mySelectedCompany={mySelectedCompany}
         setMySelectedCompany={setMySelectedCompany}
         handleFullReset={handleFullReset}
+        resultPage={resultPage}
+        setResultPage={setResultPage}
       />
 
       {selectComplete && (
