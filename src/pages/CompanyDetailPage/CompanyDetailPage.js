@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import PaginationButton from "../../components/Buttons/PaginationButton.js";
-import "./CompanyDetailPage.css";
-import InvesterList from "../../components/CompanyDetail/InvesterList.js";
-import CompanyDetail from "../../components/CompanyDetail/CompanyDetail.js";
-import { deleteInvester, getCompany, getInvester } from "../../api.js";
-import Modal from "../../components/modal/modal.js";
-import DeleteModalForm from "../../components/CompanyDetail/Forms/DeleteModalForm.js";
-import DeleteFailForm from "../../components/CompanyDetail/Forms/DeleteFailForm.js";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import PaginationButton from '../../components/Buttons/PaginationButton.js';
+import './CompanyDetailPage.css';
+import InvesterList from '../../components/CompanyDetail/InvesterList.js';
+import CompanyDetail from '../../components/CompanyDetail/CompanyDetail.js';
+import { deleteInvester, getCompany, getInvester } from '../../api.js';
+import Modal from '../../components/modal/modal.js';
+import DeleteModalForm from '../../components/CompanyDetail/Forms/DeleteModalForm.js';
+import DeleteFailForm from '../../components/CompanyDetail/Forms/DeleteFailForm.js';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function CompanyDetailPage() {
   const [detail, setDetail] = useState([]);
@@ -24,6 +24,8 @@ export default function CompanyDetailPage() {
   const [investerId, setInvesterId] = useState(null); //투자자 id 상태관리
 
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const company = async () => {
     const params = { id: id };
@@ -54,7 +56,9 @@ export default function CompanyDetailPage() {
     e.preventDefault();
     const findInvesterId = invester.find((data) => data.id === investerId);
     if (findInvesterId.password === password) {
-      deleteInvester(findInvesterId.id).then(() => window.location.reload());
+      deleteInvester(findInvesterId.id).then((id) =>
+        navigate(`/company/${id}`)
+      );
     } else {
       setIsFail(true);
     }
@@ -112,22 +116,22 @@ export default function CompanyDetailPage() {
           id={id}
         />
       )}
-      <div className='detail-page-modal'>
-      <Modal
-        children={
-          isFail ? (
-            <DeleteFailForm onClick={clearClick} />
-          ) : (
-            <DeleteModalForm
-              onClick={deleteClick}
-              passwordChange={passwordChange}
-            />
-          )
-        }
-        isOpen={isModalOpen}
-        closeModal={closeModalClick}
-        className={'modal-content'}
-      />
+      <div className="detail-page-modal">
+        <Modal
+          children={
+            isFail ? (
+              <DeleteFailForm onClick={clearClick} />
+            ) : (
+              <DeleteModalForm
+                onClick={deleteClick}
+                passwordChange={passwordChange}
+              />
+            )
+          }
+          isOpen={isModalOpen}
+          closeModal={closeModalClick}
+          className={'modal-content'}
+        />
       </div>
     </div>
   );
