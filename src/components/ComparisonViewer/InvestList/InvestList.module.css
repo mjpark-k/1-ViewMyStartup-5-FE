@@ -227,6 +227,7 @@
 
   .list li:nth-child(1) {
     width: 21.55%;
+    white-space: nowrap;
   }
 
   .list li:nth-child(2) {

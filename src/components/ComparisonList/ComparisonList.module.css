@@ -199,6 +199,7 @@
 
   .th li:nth-child(2) {
     width: 20.11%;
+    white-space: nowrap;
   }
 
   .th li:nth-child(3) {
