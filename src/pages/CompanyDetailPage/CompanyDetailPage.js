@@ -7,7 +7,7 @@ import { deleteInvester, getCompany, getInvester } from '../../api.js';
 import Modal from '../../components/modal/modal.js';
 import DeleteModalForm from '../../components/CompanyDetail/Forms/DeleteModalForm.js';
 import DeleteFailForm from '../../components/CompanyDetail/Forms/DeleteFailForm.js';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function CompanyDetailPage() {
   const [detail, setDetail] = useState([]);
@@ -24,8 +24,6 @@ export default function CompanyDetailPage() {
   const [investerId, setInvesterId] = useState(null); //투자자 id 상태관리
 
   const { id } = useParams();
-
-  const navigate = useNavigate();
 
   const company = async () => {
     const params = { id: id };
@@ -56,9 +54,7 @@ export default function CompanyDetailPage() {
     e.preventDefault();
     const findInvesterId = invester.find((data) => data.id === investerId);
     if (findInvesterId.password === password) {
-      deleteInvester(findInvesterId.id).then((id) =>
-        navigate(`/company/${id}`)
-      );
+      deleteInvester(findInvesterId.id).then(() => window.location.reload());
     } else {
       setIsFail(true);
     }
