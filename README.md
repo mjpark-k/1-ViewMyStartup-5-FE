@@ -230,10 +230,9 @@
   </pre>
 </details>
 
-# 구현 홈페이지
+# 🏁 구현 홈페이지
 
-링크
+[View My StartUp](https://view-my-startup-5.netlify.app)
 
-# 프로젝트 회고록
-
-(제작한 발표자료 링크 혹은 첨부파일)
+# 😊 프로젝트 회고록
+[프로젝트 회고록](https://www.notion.so/861a295e70264888a1bdc67ddc8c2913)
