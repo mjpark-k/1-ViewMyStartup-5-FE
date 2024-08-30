@@ -79,6 +79,7 @@
 <img src="https://github.com/user-attachments/assets/b4d6f6a1-5d9f-4a18-9666-8d60f0fd5dca" width="40%" height="40%">
 <img src="https://github.com/user-attachments/assets/26543711-a54b-49e6-9479-9a9a70b6c37d" width="40%" height="40%">
 <img src="https://github.com/user-attachments/assets/eab0ff56-44ae-4d9b-8625-5d8c227fd71e" width="40%" height="40%">
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/167840750/363052031-2574c423-5fcd-47c8-a300-9685270083a2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240830%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240830T053145Z&X-Amz-Expires=300&X-Amz-Signature=faee644583020882a6aa58a11430ed4fe790881ccb899bfdbb1c0d4db9d58ddc&X-Amz-SignedHeaders=host&actor_id=103097363&key_id=0&repo_id=841765715" width="40%" height="40%">
 
 - **공용 Button 컴포넌트**
   - 일반 버튼과 페이지네이션 버튼 2가지 컴포넌트
@@ -90,6 +91,8 @@
   - 비밀번호가 일치하지 않을 경우 삭제 실패 팝업으로 변경
   - 투자내역이 없는 경우 텍스트 출력
   - 반응형 레이아웃 구현
+- **NOT FOUND 페이지**
+  - 잘못된 url일 경우 NOT FOUND 페이지로 이동
 
 # 📂 파일구조
 
@@ -235,4 +238,5 @@
 [View My StartUp](https://view-my-startup-5.netlify.app)
 
 # 😊 프로젝트 회고록
+
 [프로젝트 회고록](https://www.notion.so/861a295e70264888a1bdc67ddc8c2913)
